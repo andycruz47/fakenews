@@ -1,0 +1,167 @@
+{UTF-8}
+Capacidad de distincion entre noticias falsas y verdaderas  = A FUNCTION OF( Ingenuidad de las personas\
+		)
+	~	
+	~		|
+
+Capacidad de reportar noticias falsas  = A FUNCTION OF( Publicaciones de Fake News)
+	~	
+	~		|
+
+Confianza en creer publicaciones de Rs  = A FUNCTION OF( Ingenuidad de las personas)
+	~	
+	~		|
+
+Difusion de Fake News  = A FUNCTION OF( Difusion de fuentes no fiables,Nivel de censura\
+		,Personas que creen en Fake News en redes sociales)
+	~	
+	~		|
+
+Difusion de fuentes no fiables  = A FUNCTION OF( Seguidores de fuentes no fiables)
+	~	
+	~		|
+
+Fuentes no fiables  = A FUNCTION OF( Potenciales creadores de Fake News)
+	~	
+	~		|
+
+Ingenuidad de las personas  = A FUNCTION OF( )
+	~	
+	~		|
+
+Nivel de censura  = A FUNCTION OF( Politicas de redes sociales,Reportes de noticas falsas\
+		)
+	~	
+	~		|
+
+Personas potenciales con capacidad en creer en FN  = A FUNCTION OF( Confianza en creer publicaciones de Rs\
+		,Difusion de Fake News)
+	~	
+	~		|
+
+Personas que creen en Fake News en redes sociales  = A FUNCTION OF( Capacidad de distincion entre noticias falsas y verdaderas\
+		,Personas potenciales con capacidad en creer en FN)
+	~	
+	~		|
+
+Politicas de redes sociales  = A FUNCTION OF( )
+	~	
+	~		|
+
+Potenciales creadores de Fake News  = A FUNCTION OF( Seguidores de fuentes no fiables\
+		)
+	~	
+	~		|
+
+Publicaciones de Fake News  = A FUNCTION OF( Difusion de Fake News,Fuentes no fiables\
+		,Nivel de censura)
+	~	
+	~		|
+
+Reportes de noticas falsas  = A FUNCTION OF( Capacidad de reportar noticias falsas)
+	~	
+	~		|
+
+Seguidores de fuentes no fiables  = A FUNCTION OF( Personas que creen en Fake News en redes sociales\
+		)
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 2030
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 2000
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
+10,1,Confianza en creer publicaciones de Rs,257,166,64,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,Ingenuidad de las personas,255,298,56,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,Capacidad de distincion entre noticias falsas y verdaderas,404,435,77,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,Personas potenciales con capacidad en creer en FN,530,208,83,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,Personas que creen en Fake News en redes sociales,758,356,72,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,Seguidores de fuentes no fiables,742,134,55,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,7,Difusion de fuentes no fiables,962,187,60,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,8,Difusion de Fake News,962,381,55,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,9,Politicas de redes sociales,731,495,56,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,10,Nivel de censura,954,495,53,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,11,Reportes de noticas falsas,949,588,42,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,12,Capacidad de reportar noticias falsas,1212,535,71,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,13,Publicaciones de Fake News,1188,366,54,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,14,Potenciales creadores de Fake News,1177,113,70,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,15,Fuentes no fiables,1167,227,56,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,16,2,1,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(232,235)|
+1,17,1,4,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(398,131)|
+1,18,4,5,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(582,312)|
+1,19,8,4,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(798,236)|
+1,20,5,6,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(715,237)|
+1,21,6,7,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(878,124)|
+1,22,6,14,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(924,25)|
+1,23,14,15,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1197,167)|
+1,24,15,13,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1202,284)|
+1,25,13,12,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1228,441)|
+1,26,12,11,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1097,592)|
+1,27,11,10,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(929,542)|
+1,28,9,10,1,0,43,0,2,65,0,-1--1--1,|12||0-0-0,1|(838,438)|
+1,29,8,13,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1078,415)|
+1,30,5,8,1,0,0,0,0,64,0,-1--1--1,,1|(860,408)|
+1,31,7,8,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(989,276)|
+1,32,2,3,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(259,418)|
+1,33,3,5,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(606,452)|
+1,34,10,8,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(940,442)|
+1,35,10,13,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(1188,387)|
+12,36,0,626,35,73,19,0,7,0,8,0,0,0,0,-1--1--1,0-0-255,|24||255-255-255,0,0,0,0,0,0
+Fake News
+///---\\\
+:L<%^E!@
+9:Current
+23:0
+15:0,0,0,0,0,0
+19:5,0
+27:0,
+34:0,
+42:1
+72:0
+73:0
+5:Reportes de noticas falsas
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
+24:0
+25:0
+26:0
+75:
+43:
