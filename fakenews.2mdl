@@ -1,4 +1,91 @@
 {UTF-8}
+Aprendizaje por errores  = A FUNCTION OF( Probabilidad de reflexion sobre errores)
+	~	
+	~		|
+
+Nivel educacion  = A FUNCTION OF( Inversion real en la educacion,Investigacion en educacion\
+		)
+	~	
+	~		|
+
+Probabilidad de reflexion sobre errores  = A FUNCTION OF( Errores)
+	~	
+	~		|
+
+Funcionarios incompetentes que ocupan un puesto en el gobierno  = A FUNCTION OF( Probabilidad de elegir gobernandores incompetentes\
+		)
+	~	
+	~		|
+
+Corrupcion  = A FUNCTION OF( Funcionarios incompetentes que ocupan un puesto en el gobierno\
+		)
+	~	
+	~		|
+
+Diferencia entre inversion real y planeada  = A FUNCTION OF( Corrupcion)
+	~	
+	~		|
+
+Investigacion en educacion  = A FUNCTION OF( Presupuesto para la educacion)
+	~	
+	~		|
+
+Presupuesto para la educacion  = A FUNCTION OF( Nivel economico del pais,Porcentaje asignado a la educacion\
+		)
+	~	
+	~		|
+
+Educacion orientada al trabajo  = A FUNCTION OF( Nivel educacion)
+	~	
+	~		|
+
+Errores  = A FUNCTION OF( Probabilidad de comete errores)
+	~	
+	~		|
+
+Probabilidad de elegir gobernandores incompetentes  = A FUNCTION OF( Publicaciones de Fake News acerca de temas eleectorales\
+		,Votantes ingenuos)
+	~	
+	~		|
+
+Nivel de calificacion para trabajar  = A FUNCTION OF( Educacion orientada al trabajo)
+	~	
+	~		|
+
+Ingenuidad de las personas  = A FUNCTION OF( Aprendizaje por errores,Nivel educacion)
+	~	
+	~		|
+
+Inversion real en la educacion  = A FUNCTION OF( Diferencia entre inversion real y planeada\
+		)
+	~	
+	~		|
+
+Porcentaje asignado a la educacion  = A FUNCTION OF( )
+	~	
+	~		|
+
+Nivel economico del pais  = A FUNCTION OF( Corrupcion,Productividad de trabajadores)
+	~	
+	~		|
+
+Votantes ingenuos  = A FUNCTION OF( Ingenuidad de las personas)
+	~	
+	~		|
+
+Probabilidad de comete errores  = A FUNCTION OF( Ingenuidad de las personas)
+	~	
+	~		|
+
+Publicaciones de Fake News acerca de temas eleectorales  = A FUNCTION OF( Publicaciones de Fake News\
+		)
+	~	
+	~		|
+
+Productividad de trabajadores  = A FUNCTION OF( Nivel de calificacion para trabajar)
+	~	
+	~		|
+
 Capacidad de distincion entre noticias falsas y verdaderas  = A FUNCTION OF( Ingenuidad de las personas\
 		)
 	~	
@@ -22,10 +109,6 @@ Difusion de fuentes no fiables  = A FUNCTION OF( Seguidores de fuentes no fiable
 	~		|
 
 Fuentes no fiables  = A FUNCTION OF( Potenciales creadores de Fake News)
-	~	
-	~		|
-
-Ingenuidad de las personas  = A FUNCTION OF( )
 	~	
 	~		|
 
@@ -97,56 +180,109 @@ TIME STEP  = 1
 \\\---/// Sketch information - do not modify anything except names
 V300  Do not put anything below this section - it will be ignored
 *View 1
-$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,5,0
-10,1,Confianza en creer publicaciones de Rs,257,166,64,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,2,Ingenuidad de las personas,255,298,56,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,3,Capacidad de distincion entre noticias falsas y verdaderas,404,435,77,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,4,Personas potenciales con capacidad en creer en FN,530,208,83,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,5,Personas que creen en Fake News en redes sociales,758,356,72,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,6,Seguidores de fuentes no fiables,742,134,55,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,7,Difusion de fuentes no fiables,962,187,60,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,8,Difusion de Fake News,962,381,55,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,9,Politicas de redes sociales,731,495,56,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,10,Nivel de censura,954,495,53,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,11,Reportes de noticas falsas,949,588,42,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,12,Capacidad de reportar noticias falsas,1212,535,71,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,13,Publicaciones de Fake News,1188,366,54,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,14,Potenciales creadores de Fake News,1177,113,70,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-10,15,Fuentes no fiables,1167,227,56,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
-1,16,2,1,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(232,235)|
-1,17,1,4,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(398,131)|
-1,18,4,5,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(582,312)|
-1,19,8,4,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(798,236)|
-1,20,5,6,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(715,237)|
-1,21,6,7,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(878,124)|
-1,22,6,14,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(924,25)|
-1,23,14,15,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1197,167)|
-1,24,15,13,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1202,284)|
-1,25,13,12,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1228,441)|
-1,26,12,11,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1097,592)|
-1,27,11,10,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(929,542)|
-1,28,9,10,1,0,43,0,2,65,0,-1--1--1,|12||0-0-0,1|(838,438)|
-1,29,8,13,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1078,415)|
-1,30,5,8,1,0,0,0,0,64,0,-1--1--1,,1|(860,408)|
-1,31,7,8,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(989,276)|
-1,32,2,3,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(259,418)|
-1,33,3,5,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(606,452)|
-1,34,10,8,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(940,442)|
-1,35,10,13,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(1188,387)|
-12,36,0,626,35,73,19,0,7,0,8,0,0,0,0,-1--1--1,0-0-255,|24||255-255-255,0,0,0,0,0,0
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Confianza en creer publicaciones de Rs,710,176,64,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,Ingenuidad de las personas,629,298,56,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,Capacidad de distincion entre noticias falsas y verdaderas,778,435,77,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,Personas potenciales con capacidad en creer en FN,907,204,83,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,Personas que creen en Fake News en redes sociales,1049,426,72,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,Seguidores de fuentes no fiables,1134,605,55,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,7,Difusion de fuentes no fiables,1351,539,60,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,8,Difusion de Fake News,1239,375,55,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,9,Politicas de redes sociales,1018,154,56,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,10,Nivel de censura,1352,294,53,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,11,Reportes de noticas falsas,1201,131,42,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,12,Capacidad de reportar noticias falsas,1398,178,71,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,13,Publicaciones de Fake News,1531,355,54,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,14,Potenciales creadores de Fake News,1532,582,70,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,15,Fuentes no fiables,1649,481,56,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,16,2,1,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(692,246)|
+1,17,1,4,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(809,160)|
+1,18,4,5,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(911,316)|
+1,19,8,4,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1150,276)|
+1,20,5,6,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1070,514)|
+1,21,6,7,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1248,585)|
+1,22,6,14,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1456,603)|
+1,23,14,15,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1579,565)|
+1,24,15,13,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1635,396)|
+1,25,13,12,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1474,243)|
+1,26,12,11,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1329,122)|
+1,27,11,10,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1249,236)|
+1,28,9,10,1,0,43,0,2,65,0,-1--1--1,|12||0-0-0,1|(1173,251)|
+1,29,8,13,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1390,434)|
+1,30,5,8,1,0,43,0,2,64,0,-1--1--1,|0||-1--1--1,1|(1158,423)|
+1,31,7,8,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1247,405)|
+1,32,2,3,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(725,367)|
+1,33,3,5,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(933,477)|
+1,34,10,8,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(1316,352)|
+1,35,10,13,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(1505,338)|
+12,36,0,1075,-50,73,19,0,7,0,8,0,0,0,0,-1--1--1,0-0-255,|24||255-255-255,0,0,0,0,0,0
 Fake News
+12,37,0,1048,324,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R
+12,38,0,1289,189,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B
+10,39,Nivel educacion,439,371,51,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,40,39,2,1,0,45,0,3,65,0,255-0-0,|0||-1--1--1,1|(498,309)|
+10,41,Presupuesto para la educacion,441,616,63,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,42,Investigacion en educacion,451,501,51,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,43,41,42,1,0,0,0,0,64,0,-1--1--1,,1|(435,563)|
+1,44,42,39,1,0,0,0,0,64,0,-1--1--1,,1|(429,433)|
+10,45,Porcentaje asignado a la educacion,313,666,70,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,46,45,41,1,0,0,0,0,64,0,-1--1--1,,1|(361,613)|
+10,47,Nivel economico del pais,563,705,54,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,48,47,41,1,0,0,0,0,64,0,-1--1--1,,1|(508,685)|
+10,49,Educacion orientada al trabajo,727,569,65,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,50,Nivel de calificacion para trabajar,763,662,64,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,51,Productividad de trabajadores,738,748,55,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,52,49,50,1,0,0,0,0,64,0,-1--1--1,,1|(768,606)|
+1,53,50,51,1,0,0,0,0,64,0,-1--1--1,,1|(779,690)|
+1,54,51,47,1,0,0,0,0,64,0,-1--1--1,,1|(623,764)|
+1,55,39,49,1,0,0,0,0,64,0,-1--1--1,,1|(570,487)|
+10,56,Corrupcion,450,848,37,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,57,56,47,1,0,45,0,3,64,0,255-0-0,|0||-1--1--1,1|(514,804)|
+10,58,Votantes ingenuos,392,251,57,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,59,2,58,1,0,0,0,0,64,0,-1--1--1,,1|(517,254)|
+10,60,Probabilidad de elegir gobernandores incompetentes,128,291,70,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,61,58,60,1,0,0,0,0,64,0,-1--1--1,,1|(276,229)|
+10,62,Funcionarios incompetentes que ocupan un puesto en el gobierno,153,432,88,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,63,60,62,1,0,0,0,0,64,0,-1--1--1,,1|(113,362)|
+1,64,62,56,1,0,0,0,0,64,0,-1--1--1,,1|(244,753)|
+12,65,0,603,605,20,20,4,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R
+12,66,0,324,503,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R
+10,67,Diferencia entre inversion real y planeada,651,905,78,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,68,Inversion real en la educacion,826,850,60,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,69,56,67,1,0,0,0,0,64,0,-1--1--1,,1|(517,891)|
+1,70,67,68,1,0,45,0,3,64,0,255-0-0,|0||-1--1--1,1|(778,899)|
+1,71,68,39,1,0,0,0,0,64,0,-1--1--1,,1|(813,573)|
+10,72,Publicaciones de Fake News acerca de temas eleectorales,1037,44,73,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,73,13,72,1,0,0,0,0,64,0,-1--1--1,,1|(1516,239)|
+1,74,72,60,1,0,0,0,0,64,0,-1--1--1,,1|(250,141)|
+10,75,Probabilidad de comete errores,536,84,51,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,76,Aprendizaje por errores,529,210,52,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,77,Probabilidad de reflexion sobre errores,354,169,72,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,78,76,2,1,0,45,0,3,64,0,255-0-0,|0||-1--1--1,1|(577,262)|
+1,79,77,76,1,0,0,0,0,64,0,-1--1--1,,1|(446,211)|
+1,80,2,75,1,0,0,0,0,64,0,-1--1--1,,1|(633,171)|
+10,81,Errores,382,96,25,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,82,75,81,1,0,0,0,0,64,0,-1--1--1,,1|(456,74)|
+1,83,81,77,1,0,0,0,0,64,0,-1--1--1,,1|(365,118)|
+12,84,0,503,149,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B
 ///---\\\
 :L<%^E!@
 9:Current
 23:0
 15:0,0,0,0,0,0
-19:5,0
+19:100,0
 27:0,
 34:0,
 42:1
 72:0
 73:0
-5:Reportes de noticas falsas
+5:Errores
 35:Date
 36:YYYY-MM-DD
 37:2000
