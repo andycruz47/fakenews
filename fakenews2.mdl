@@ -1,0 +1,419 @@
+{UTF-8}
+Creacion de Fuente no Fiables  = A FUNCTION OF( Potenciales creadores de Fake News,Probabilidad de Creacion de Fuente\
+		)
+	~	
+	~		|
+
+Exposicion a Fake News  = A FUNCTION OF( Confianza en creer publicaciones de Rs,Difusion de Fake News\
+		)
+	~	
+	~		|
+
+Nuevos Contenido  = A FUNCTION OF( Fuentes no fiables,Tasa Publicaciones diaria)
+	~	
+	~		|
+
+Personas potenciales con capacidad en creer en FN  = A FUNCTION OF( -Convencimiento,Exposicion a Fake News\
+		)
+	~	
+	~		|
+
+Convencimiento  = A FUNCTION OF( Personas potenciales con capacidad en creer en FN,Tasa Conversion de Personas que cree\
+		)
+	~	
+	~		|
+
+Seguidores de fuentes no fiables  = A FUNCTION OF( Fanatismo)
+	~	
+	~		|
+
+Informar  = A FUNCTION OF( Capacidad de distincion entre noticias falsas y verdaderas\
+		,Personas que creen en Fake News en redes sociales)
+	~	
+	~		|
+
+Potenciales creadores de Fake News  = A FUNCTION OF( Fantismo,Seguidores de fuentes no fiables\
+		)
+	~	
+	~		|
+
+Tasa de Temas Electorales  = A FUNCTION OF( )
+	~	
+	~		|
+
+Tasa Publicaciones diaria  = A FUNCTION OF( )
+	~	
+	~		|
+
+Probabilidad de Creacion de Fuente  = A FUNCTION OF( )
+	~	
+	~		|
+
+Eliminacion  = A FUNCTION OF( Nivel de censura,Publicaciones de Fake News)
+	~	
+	~		|
+
+Tasa Conversion de Personas que cree  = A FUNCTION OF( )
+	~	
+	~		|
+
+Tasa de Fanatismo  = A FUNCTION OF( )
+	~	
+	~		|
+
+Fanatismo  = A FUNCTION OF( Personas que creen en Fake News en redes sociales,Tasa de Fanatismo\
+		)
+	~	
+	~		|
+
+Fantismo  = A FUNCTION OF( Tasa de Fanatismo)
+	~	
+	~		|
+
+Fuentes no fiables  = A FUNCTION OF( Creacion de Fuente no Fiables)
+	~	
+	~		|
+
+Publicaciones de Fake News  = A FUNCTION OF( -Eliminacion,Nuevos Contenido)
+	~	
+	~		|
+
+Publicaciones de Fake News acerca de temas eleectorales  = A FUNCTION OF( Temas Electorales\
+		)
+	~	
+	~		|
+
+Temas Electorales  = A FUNCTION OF( Publicaciones de Fake News,Tasa de Temas Electorales\
+		)
+	~	
+	~		|
+
+Personas que creen en Fake News en redes sociales  = A FUNCTION OF( Convencimiento,-Informar\
+		)
+	~	
+	~		|
+
+Aprendizaje por errores  = A FUNCTION OF( Probabilidad de reflexion sobre errores)
+	~	
+	~		|
+
+Nivel educacion  = A FUNCTION OF( Inversion real en la educacion,Investigacion en educacion\
+		)
+	~	
+	~		|
+
+Probabilidad de reflexion sobre errores  = A FUNCTION OF( Errores)
+	~	
+	~		|
+
+Funcionarios incompetentes que ocupan un puesto en el gobierno  = A FUNCTION OF( Probabilidad de elegir gobernandores incompetentes\
+		)
+	~	
+	~		|
+
+Corrupcion  = A FUNCTION OF( Funcionarios incompetentes que ocupan un puesto en el gobierno\
+		)
+	~	
+	~		|
+
+Diferencia entre inversion real y planeada  = A FUNCTION OF( Corrupcion)
+	~	
+	~		|
+
+Investigacion en educacion  = A FUNCTION OF( Presupuesto para la educacion)
+	~	
+	~		|
+
+Presupuesto para la educacion  = A FUNCTION OF( Nivel economico del pais,Porcentaje asignado a la educacion\
+		)
+	~	
+	~		|
+
+Educacion orientada al trabajo  = A FUNCTION OF( Nivel educacion)
+	~	
+	~		|
+
+Errores  = A FUNCTION OF( Probabilidad de comete errores)
+	~	
+	~		|
+
+Probabilidad de elegir gobernandores incompetentes  = A FUNCTION OF( Publicaciones de Fake News acerca de temas eleectorales\
+		,Votantes ingenuos)
+	~	
+	~		|
+
+Nivel de calificacion para trabajar  = A FUNCTION OF( Educacion orientada al trabajo)
+	~	
+	~		|
+
+Ingenuidad de las personas  = A FUNCTION OF( Aprendizaje por errores,Nivel educacion)
+	~	
+	~		|
+
+Inversion real en la educacion  = A FUNCTION OF( Diferencia entre inversion real y planeada\
+		)
+	~	
+	~		|
+
+Porcentaje asignado a la educacion  = A FUNCTION OF( )
+	~	
+	~		|
+
+Nivel economico del pais  = A FUNCTION OF( Corrupcion,Productividad de trabajadores)
+	~	
+	~		|
+
+Votantes ingenuos  = A FUNCTION OF( Ingenuidad de las personas)
+	~	
+	~		|
+
+Probabilidad de comete errores  = A FUNCTION OF( Ingenuidad de las personas)
+	~	
+	~		|
+
+Productividad de trabajadores  = A FUNCTION OF( Nivel de calificacion para trabajar)
+	~	
+	~		|
+
+Capacidad de distincion entre noticias falsas y verdaderas  = A FUNCTION OF( Ingenuidad de las personas\
+		)
+	~	
+	~		|
+
+Capacidad de reportar noticias falsas  = A FUNCTION OF( Publicaciones de Fake News)
+	~	
+	~		|
+
+Confianza en creer publicaciones de Rs  = A FUNCTION OF( Ingenuidad de las personas)
+	~	
+	~		|
+
+Difusion de Fake News  = A FUNCTION OF( Difusion de fuentes no fiables,Nivel de censura\
+		,Personas que creen en Fake News en redes sociales)
+	~	
+	~		|
+
+Difusion de fuentes no fiables  = A FUNCTION OF( Seguidores de fuentes no fiables)
+	~	
+	~		|
+
+Nivel de censura  = A FUNCTION OF( Politicas de redes sociales,Reportes de noticas falsas\
+		)
+	~	
+	~		|
+
+Politicas de redes sociales  = A FUNCTION OF( )
+	~	
+	~		|
+
+Reportes de noticas falsas  = A FUNCTION OF( Capacidad de reportar noticias falsas)
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 2030
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 2000
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,50,0
+10,1,Confianza en creer publicaciones de Rs,1286,288,64,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,Ingenuidad de las personas,734,507,56,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,Capacidad de distincion entre noticias falsas y verdaderas,1041,661,77,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,Personas potenciales con capacidad en creer en FN,1387,507,71,35,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,Personas que creen en Fake News en redes sociales,1236,712,61,31,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,Seguidores de fuentes no fiables,1624,929,59,27,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,7,Difusion de fuentes no fiables,1659,768,60,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,8,Difusion de Fake News,1496,711,56,21,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,9,Politicas de redes sociales,1632,235,56,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,10,Nivel de censura,1605,483,53,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,11,Reportes de noticas falsas,1696,598,42,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,12,Capacidad de reportar noticias falsas,1902,617,71,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,13,Publicaciones de Fake News,2148,516,85,47,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,14,Potenciales creadores de Fake News,1856,916,64,30,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,15,Fuentes no fiables,2018,766,65,24,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,16,2,1,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1114,515)|
+1,17,1,105,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1352,375)|
+1,18,4,84,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1222,501)|
+1,19,8,105,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1528,517)|
+1,20,6,7,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1670,840)|
+1,21,6,14,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1730,922)|
+1,22,14,123,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1904,837)|
+1,23,15,116,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(2052,701)|
+1,24,13,12,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(2019,581)|
+1,25,12,11,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1786,635)|
+1,26,11,10,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1645,554)|
+1,27,9,10,1,0,43,0,2,65,0,-1--1--1,|12||0-0-0,1|(1584,327)|
+1,28,5,8,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1368,765)|
+1,29,7,8,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1528,719)|
+1,30,2,3,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(902,616)|
+1,31,3,111,1,0,45,0,3,64,0,0-0-255,|12||0-0-0,1|(1052,750)|
+1,32,10,8,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(1586,568)|
+12,33,0,942,-32,73,19,0,7,0,8,0,0,0,0,-1--1--1,0-0-255,|24||255-255-255,0,0,0,0,0,0
+Fake News
+12,34,0,1403,613,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R
+12,35,0,1829,456,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B
+10,36,Nivel educacion,774,740,51,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,37,36,2,1,0,45,0,3,65,0,255-0-0,|12||0-0-0,1|(779,613)|
+10,38,Presupuesto para la educacion,1093,980,51,29,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,39,Investigacion en educacion,961,775,51,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,40,38,39,1,0,0,0,0,64,0,-1--1--1,,1|(1078,933)|
+1,41,39,36,1,0,0,0,0,64,0,-1--1--1,,1|(900,749)|
+10,42,Porcentaje asignado a la educacion,1126,1181,70,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,43,42,38,1,0,0,0,0,64,0,-1--1--1,,1|(1133,1088)|
+10,44,Nivel economico del pais,982,1100,54,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,45,44,38,1,0,0,0,0,64,0,-1--1--1,,1|(1056,1048)|
+10,46,Educacion orientada al trabajo,645,899,65,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,47,Nivel de calificacion para trabajar,655,1042,64,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,48,Productividad de trabajadores,782,1120,55,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,49,46,47,1,0,0,0,0,64,0,-1--1--1,,1|(642,960)|
+1,50,47,48,1,0,0,0,0,64,0,-1--1--1,,1|(764,1111)|
+1,51,48,44,1,0,0,0,0,64,0,-1--1--1,,1|(908,1114)|
+1,52,36,46,1,0,0,0,0,64,0,-1--1--1,,1|(682,830)|
+10,53,Corrupcion,119,707,37,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,54,53,44,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(386,1066)|
+10,55,Votantes ingenuos,572,373,57,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,56,2,55,1,0,0,0,0,64,0,-1--1--1,,1|(664,429)|
+10,57,Probabilidad de elegir gobernandores incompetentes,332,365,70,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,58,55,57,1,0,0,0,0,64,0,-1--1--1,,1|(456,353)|
+10,59,Funcionarios incompetentes que ocupan un puesto en el gobierno,164,516,88,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,60,57,59,1,0,0,0,0,64,0,-1--1--1,,1|(253,417)|
+1,61,59,53,1,0,0,0,0,64,0,-1--1--1,,1|(127,631)|
+12,62,0,896,946,20,20,4,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R
+12,63,0,450,614,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R
+10,64,Diferencia entre inversion real y planeada,308,856,78,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,65,Inversion real en la educacion,542,849,60,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,66,53,64,1,0,0,0,0,64,0,-1--1--1,,1|(180,789)|
+1,67,64,65,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(453,864)|
+1,68,65,36,1,0,0,0,0,64,0,-1--1--1,,1|(654,825)|
+10,69,Publicaciones de Fake News acerca de temas eleectorales,1483,91,79,29,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,70,13,137,1,0,0,0,0,64,0,-1--1--1,,1|(2061,340)|
+1,71,69,57,1,0,0,0,0,64,0,-1--1--1,,1|(523,255)|
+10,72,Probabilidad de comete errores,1082,437,51,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,73,Aprendizaje por errores,722,307,52,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,74,Probabilidad de reflexion sobre errores,901,182,72,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,75,73,2,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(710,392)|
+1,76,74,73,1,0,0,0,0,64,0,-1--1--1,,1|(775,218)|
+1,77,2,72,1,0,0,0,0,64,0,-1--1--1,,1|(908,533)|
+10,78,Errores,1111,268,25,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,79,72,78,1,0,0,0,0,64,0,-1--1--1,,1|(1126,353)|
+1,80,78,74,1,0,0,0,0,64,0,-1--1--1,,1|(1044,204)|
+12,81,0,903,372,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B
+1,82,84,5,4,0,0,22,0,0,0,-1--1--1,,1|(1226,627)|
+1,83,84,4,100,0,0,22,0,0,0,-1--1--1,,1|(1226,507)|
+11,84,0,1226,568,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,85,Convencimiento,1285,568,51,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,86,Tasa Conversion de Personas que cree,1076,585,64,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,87,86,84,0,0,0,0,0,64,0,-1--1--1,,1|(1172,573)|
+12,88,48,1332,922,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,89,91,6,4,0,0,22,0,0,0,-1--1--1,,1|(1512,922)|
+1,90,91,88,100,0,0,22,0,0,0,-1--1--1,,1|(1394,922)|
+11,91,48,1453,922,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,92,Fanatismo,1453,941,33,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,93,5,91,1,0,0,0,0,64,0,-1--1--1,,1|(1309,845)|
+10,94,Tasa de Fanatismo,1641,1076,59,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,95,94,91,1,0,0,0,0,64,0,-1--1--1,,1|(1513,1020)|
+12,96,48,1913,1092,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,97,99,14,4,0,0,22,0,0,0,-1--1--1,,1|(1913,976)|
+1,98,99,96,100,0,0,22,0,0,0,-1--1--1,,1|(1913,1051)|
+11,99,48,1913,1012,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,100,Fantismo,1951,1012,30,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,101,94,99,1,0,0,0,0,64,0,-1--1--1,,1|(1805,1069)|
+12,102,48,1466,317,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,103,105,4,4,0,0,22,0,0,0,-1--1--1,,1|(1457,438)|
+1,104,105,102,100,0,0,22,0,0,0,-1--1--1,,1|(1457,359)|
+11,105,48,1457,399,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,106,Exposicion a Fake News,1524,399,59,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,107,48,1223,924,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,108,110,107,4,0,0,22,0,0,0,-1--1--1,,1|(1223,874)|
+1,109,110,5,100,0,0,22,0,0,0,-1--1--1,,1|(1223,781)|
+11,110,48,1223,826,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,111,Informar,1259,826,28,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,112,5,110,1,0,0,0,0,64,0,-1--1--1,,1|(1151,755)|
+12,113,48,2130,794,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,114,116,13,4,0,0,22,0,0,0,-1--1--1,,1|(2139,625)|
+1,115,116,113,100,0,0,22,0,0,0,-1--1--1,,1|(2139,743)|
+11,116,48,2139,694,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,117,Nuevos Contenido,2206,694,59,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,118,Tasa Publicaciones diaria,2281,832,63,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,119,118,116,0,0,0,0,0,64,0,-1--1--1,,1|(2208,761)|
+12,120,48,2034,997,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,121,123,15,4,0,0,22,0,0,0,-1--1--1,,1|(2028,825)|
+1,122,123,120,100,0,0,22,0,0,0,-1--1--1,,1|(2028,933)|
+11,123,48,2028,869,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,124,Creacion de Fuente no Fiables,2028,896,63,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,125,Probabilidad de Creacion de Fuente,2149,969,63,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,126,125,123,1,0,0,0,0,64,0,-1--1--1,,1|(2109,863)|
+12,127,48,1875,510,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,128,130,127,4,0,0,22,0,0,0,-1--1--1,,1|(1926,510)|
+1,129,130,13,100,0,0,22,0,0,0,-1--1--1,,1|(2021,510)|
+11,130,48,1974,510,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,131,Eliminacion,1974,529,36,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,132,10,131,1,0,0,0,0,64,0,-1--1--1,,1|(1853,331)|
+1,133,13,130,1,0,0,0,0,64,0,-1--1--1,,1|(2014,457)|
+12,134,48,1842,90,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,135,137,69,4,0,0,22,0,0,0,-1--1--1,,1|(1626,83)|
+1,136,137,134,100,0,0,22,0,0,0,-1--1--1,,1|(1767,83)|
+11,137,48,1697,83,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,138,Temas Electorales,1697,102,57,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,139,Tasa de Temas Electorales,1790,10,49,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,140,139,137,1,0,0,0,0,64,0,-1--1--1,,1|(1693,34)|
+///---\\\
+:L<%^E!@
+9:Current
+23:0
+15:0,0,0,0,0,0
+19:50,0
+27:0,
+34:0,
+42:1
+72:0
+73:0
+5:Nivel de censura
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
+24:0
+25:0
+26:0
+75:
+43:
