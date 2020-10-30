@@ -1,0 +1,1615 @@
+{UTF-8}
+Creadores de FN por diversión informados=
+	Creador de Fake News*Tasa de transicion de creador creyente a informado
+	~	
+	~		|
+
+Nivel de Censura(
+	[(0,0)-(1e+07,1)],(0,0),(500000,0),(2e+06,0.1),(3e+06,0.2),(4e+06,0.3),(5e+06,0.4),(\
+		6e+06,0.6),(7e+06,0.8),(8e+06,1))
+	~	1/Year
+	~		|
+
+Nuevas publicaciones reportadas=
+	Publicaciones de Fake New No Reportada*Tasa de transición
+	~	Publicaciones/Year
+	~	Cantidad de Publicaciones que pasan a ser reportadas
+	|
+
+Tasa de transición=
+	0.8
+	~	1/Year
+	~		|
+
+Publicaciones de Fake New No Reportada= INTEG (
+	Nuevos Contenido-Nuevas publicaciones reportadas,
+		1000)
+	~	Publicaciones
+	~	Cantidad de Publicaciones FN que no han sido reportadas despues de ser \
+		creado
+	|
+
+Tasa de eliminacion de publicaciones reportadas=
+	0.25*(1+Nivel de Censura(Publicaciones de Fake News))
+	~	1/Year
+	~	Tasa que indica el grado de eliminacion de las publicaciones que se \
+		reportan
+	|
+
+Creador de Fake News= INTEG (
+	Nuevos creadores de Fake News-Creadores de FN por diversión informados,
+		0)
+	~	Personas
+	~	Cantidad de Creadores de Publicaciones de FN
+	|
+
+Publicaciones Fake News Reportadas= INTEG (
+	Nuevas publicaciones reportadas-Nuevas publicaciones que Superan el Limite del Umbral\
+		,
+		0)
+	~	Publicaciones
+	~	Cantidad de publicaciones Fake news que han sido reportadas
+	|
+
+Historial de Impacto(
+	[(0,0)-(10,1e+06)],(0,1000),(1,7500))
+	~	
+	~		|
+
+Impacto de Evento= INTEG (
+	Nuevo Evento-Reduccion del Impacto,
+		Impacto Minimo de Evento)
+	~	Impacto
+	~		|
+
+Impacto Minimo de Evento=
+	1000
+	~	
+	~		|
+
+Nuevos Contenido=
+	Fuentes no fiables*Tasa de Creacion Contenido
+	~	Publicaciones/Year
+	~	Numero de publicaciones nueva no fiable por año
+	|
+
+Nuevo Evento=
+	Historial de Impacto(Historial de Evento(Time))
+	~	
+	~		|
+
+Tasa de Reduccion=
+	0.75
+	~	
+	~		|
+
+Reduccion del Impacto=
+	(Impacto de Evento-Impacto Minimo de Evento)*Tasa de Reduccion
+	~	
+	~		|
+
+Historial de Evento(
+	[(0,0)-(2063,1)],(55,0),(2012,0),(2017,0),(2018,1),(2019,0),(2020,0),(2022,0),(2027,\
+		0),(2028,1),(2029,0),(2037,0),(2038,1),(2039,0),(2052,0),(2061,0),(2062,1),(2063,0)\
+		)
+	~	
+	~		|
+
+Tasa de Creacion Contenido=
+	Impacto de Evento/Impacto Minimo de Evento
+	~	
+	~		|
+
+Población(
+	[(0,0)-(3000,5e+07)],(2012,2.9e+07),(2013,3e+07),(2014,3e+07),(2015,3e+07),(2016,3e+07\
+		),(2017,3.1e+07),(2018,3.1e+07),(2100,4.5e+07))
+	~	Personas
+	~	Personas que habitan en el país
+	|
+
+Población Económicamente Activa=
+	Población en Edad de Trabajar*Tasa de actividad(Time)
+	~	Personas
+	~	Población en Edad de Trabajar que tiene un trabajo o busca uno
+	|
+
+Población Económicamente no Activa=
+	Población en Edad de Trabajar*(1-Tasa de actividad(Time))
+	~	Personas
+	~	Población en Edad de Trabajar que no trabaja y no busca trabajo
+	|
+
+Población en Edad de Trabajar=
+	-1.0411e+07+1.08554*Población(Time)
+	~	Personas
+	~	Personas mayores de 14 años
+	|
+
+Ingenuidad de las personas=
+	(5*Porcentaje de adultos sin educación básica(Time)+3*(1-Nivel de Educación)+Aprendizaje por errores\
+		)/9
+	~	Dmnl
+	~	índice de que tan ingenuas son las personas en promedio
+	|
+
+Tasa de actividad(
+	[(0,0)-(3000,80)],(2007,0.738),(2017,0.724),(2018,0.723),(2100,0.71))
+	~	Dmnl
+	~	Porcentaje de la Población en Edad de Trabajar que está activa \
+		económicamente
+	|
+
+Porcentaje de adultos sin educación básica(
+	[(0,0)-(2100,10)],(2000,0.025),(2016,0.02),(2017,0.018),(2018,0.021),(2100,0.021))
+	~	Dmnl
+	~	Indice que indica los adultos que no han recibido educación básica
+	|
+
+Publicaciones electorales verídicas antiguas=
+	Publicaciones Electorales Verídicas/(Período Antiguedad)
+	~	Publicaciones/Year
+	~	Numero de publicaciones sobre temas electorales que son veredictas por año
+	|
+
+Constante 2 de regresión 3=
+	36829.3
+	~	Publicaciones*Year
+	~		|
+
+Votos producto de Fake News=
+	Razón de Publicaciones Electorales Falsas*Votantes ingenuos
+	~	Personas
+	~	Votos que fueron realizados producto de Fake News
+	|
+
+Tasa de creación de Publicaciones Electorales Falsas(
+	[(2010,0.6)-(2020,0.7)],(2011,0.653061),(2014,0.65808),(2016,0.687253),(2018,0.625921\
+		),(2019,0.690569))
+	~	1/Year
+	~	Tasa que indica el grado de creacion de publicaciones electorales falsas
+	|
+
+Período Antiguedad=
+	2
+	~	Year
+	~	Cantidad de años de antiguedad de la noticia
+	|
+
+Nuevas publicaciones electorales verídicas=
+	Publicaciones Electorales Verídicas*Tasa de Publicaciones Electorales Verídicas
+	~	Publicaciones/Year
+	~	Numero de publicaciones electorales veredictas por año
+	|
+
+Razón de Publicaciones Electorales Falsas=
+	Publicaciones Electorales Falsas/(Publicaciones Electorales Falsas+Publicaciones Electorales Verídicas\
+		)
+	~	Dmnl
+	~	Proporción de Publicaciones Electorales Falsas respecto al total
+	|
+
+Nivel Económico del País=
+	2000*(1-Índice de Percepción de Corrupción(Time))*Población Económicamente Activa\
+		*"Productividad de Trabajadores-"
+	~	um
+	~	nivel de riqueza en el pais en base a su poblacion en unidades monetarias
+	|
+
+Costante 1 de regresión 3=
+	172932
+	~	Publicaciones*Year
+	~		|
+
+Publicaciones Electorales Verídicas= INTEG (
+	Nuevas publicaciones electorales verídicas-Publicaciones electorales verídicas antiguas\
+		,
+		100)
+	~	Publicaciones
+	~	Numero de publicaciones veredictas que hablan sobre temas electorales
+	|
+
+Tasa de Publicaciones Electorales Verídicas=
+	1
+	~	1/Year
+	~	Tasa que indica el grado de publicaciones veredictas
+	|
+
+Personas con Tiempo Libre=
+	Población Económicamente no Activa
+	~	Personas
+	~	Personas que no trabajan ni estudian y por lo tanto cuentan con una \
+		cantidad excesiva de tiempo libre
+	|
+
+PEA con educación orientada al trabajo=
+	Educación orientada al trabajo*Población Económicamente Activa
+	~	Personas
+	~	Personas que recibieron educación orientada al trabajo y se encuentran \
+		laborando
+	|
+
+Tasa de eliminación de Publicaciones Electorales Falsas(
+	[(2010,0.2)-(2020,0.27)],(2011,0.22199),(2014,0.222648),(2016,0.226575),(2018,0.248951\
+		),(2019,0.249004))
+	~	1/Year
+	~	Tasa que indica el grado de creacion de publicaciones electorales falsas
+	|
+
+Publicaciones Electorales Falsas=
+	Constante 2 de regresión 3*Tasa de creación de Publicaciones Electorales Falsas(Time\
+		)+Costante 1 de regresión 3*Tasa de eliminación de Publicaciones Electorales Falsas\
+		(Time)
+	~	Publicaciones
+	~	Numero de Fake News sobre temas electorales
+	|
+
+Probabilidad de Creacion de Fuente(
+	[(0,0)-(200000,10)],(100,0.1),(200,0.3),(400,0.5),(1000,0.7),(2000,0.8),(10000,0.9),\
+		(200000,1))
+	~	Dmnl
+	~	Probabilidad de que se cree una fuente no fiable
+	|
+
+Publicaciones por eliminar=
+	IF THEN ELSE(Cantidad de Publicaciones Revisadas por Persona*Moderadores>Publicaciones Fake News Reportadas que superan el umbral de reportes\
+		, Publicaciones Fake News Reportadas que superan el umbral de reportes, Moderadores\
+		*Cantidad de Publicaciones Revisadas por Persona)
+	~	Publicaciones
+	~		|
+
+Probabilidad de ser Creador de Contenido=
+	RANDOM NORMAL(0.01,1 , 0.03 , 0.02 , 5555 )*Probabilidad de Creacion de Fuente(Creador de Fuentes no Fiables\
+		)
+	~	Dmnl
+	~	Probabilidad de que un seguidor de fuentes no fiables pase a convertirse \
+		en un creador de este tipo de contenido
+	|
+
+Nuevos reportes de publicaciones=
+	IF THEN ELSE(RANDOM 0 1()>Tasa de reportes(Publicaciones correctamente reportadas)*0.7\
+		, Nuevas publicaciones reportadas*Tasa de reportes(Publicaciones correctamente reportadas\
+		) , 0 )
+	~	Reportes/Year
+	~	Cantidad de nuevos reportes sobre todas las publicaciones que exite por \
+		anio
+	|
+
+Tasa de reportes(
+	[(0,0)-(15000,10)],(1000,0.1),(2000,0.3),(4000,0.45),(8000,0.7),(15000,0.9))
+	~	Reportes/Publicaciones
+	~	Una proporcion de la cantidad de Reportes que puede tener puede tener una \
+		publicacion al momento de ser reportada.
+	|
+
+Publicaciones correctamente reportadas=
+	Capacidad de distincion entre noticias falsas y verdaderas*Nuevas publicaciones reportadas
+	~	Publicaciones/Year
+	~		|
+
+Eliminacion=
+	Publicaciones por eliminar*Tasa de eliminacion de publicaciones reportadas
+	~	Publicaciones/Year
+	~	Numero de publicaciones eliminandas por año
+	|
+
+Probabilidad de reflexion sobre errores(
+	[(0,0)-(1000,10)],(0,0),(1,0.5),(2,0.7),(3,0.8),(4,0.9),(5,0.95),(1000,0.95))
+	~	1/Year
+	~	Probabilidad que se tiene para aprender de un error
+	|
+
+Constante 1 de regresión 2=
+	0.00026
+	~	1/Year
+	~		|
+
+Constante 2 de regresión 1=
+	0.00032
+	~	1/Year
+	~		|
+
+Aprendizaje por errores=
+	Probabilidad de reflexion sobre errores(Errores)*Media de años de cambios en errores
+	~	Dmnl
+	~	Aprendizaje debido a la reflexion de los errores cometidos
+	|
+
+Atractividad de crear FN(
+	[(0,0)-(120,10)],(10,0.1),(20,0.2),(50,0.6),(80,0.9),(120,1))
+	~	Dmnl
+	~	Es un adimensional, que indica que tan atractiva es una publicacion , \
+		tiene un comportamiento exponencial
+	|
+
+Nuevos creadores de Fake News=
+	Atractividad de crear FN(Impacto por publicacion)*Probabilidad de tener pasatiempo de crear FN\
+		*Seguidores de Fake News*Tasa de nuevos creadores
+	~	Personas/Year
+	~	La Translacion de una cantidad de seguidores se vuelve Creadores de FN
+	|
+
+Nivel de calificación para trabajar(
+	[(0,0)-(100000,1)],(0,0),(1000,0.1),(2000,0.2),(10000,1),(100000,1))
+	~	Dmnl
+	~	Indice que indica el estandar necesario para conseguir un trabajo
+	|
+
+Constante 1 de regresión 1=
+	8.38429e+06
+	~	Personas
+	~		|
+
+Nuevos votantes habilitados=
+	422036 + Constante 1 de regresión 2*Votantes habilitados + Constante 2 de regresión 2\
+		*Tasa de personas que logran la mayoría de edad(Time)
+	~	Personas/Year
+	~	Personas que logran el derecho a votar anualmente
+	|
+
+Media de años de cambios en errores=
+	1
+	~	Year
+	~		|
+
+"Productividad de Trabajadores-"=
+	Nivel de calificación para trabajar(PEA con educación orientada al trabajo)*Sueldo ideal
+	~	um/Personas
+	~	Capacidad de produccion de un empleado
+	|
+
+Votantes habilitados fallecidos=
+	-304838+Constante 1 de regresión 1*Tasa de fallecimiento de adultos(Time)+Constante 2 de regresión 1\
+		*Votantes habilitados
+	~	Personas/Year
+	~	Personas con capacidad de votar que fallecen al año
+	|
+
+Constante 2 de regresión 2=
+	1.00329e+07
+	~	Personas
+	~		|
+
+Impulso de crear FN para generar ganancia=
+	Porcentaje de ganancia por publicaciones*Probabilidad de buscar formas de generar ganancia
+	~	Dmnl
+	~	Indicador que mide el impulso para generar fn para generar ganancias
+	|
+
+Probabilidad de buscar formas de generar ganancia=
+	Probabilidad de necesitar ingresos extra
+	~	Dmnl
+	~	Probabilidad de buscar otros medios a los usuales para generar ingresos
+	|
+
+Probabilidad de necesitar ingresos extra=
+	0.5
+	~	Dmnl
+	~	Probabilidad de que se genere mas ingresos al que ya se genera
+	|
+
+Votantes=
+	Votantes habilitados*Participacion ciudadana(Time)
+	~	Personas
+	~	Personas en capacidad de votar (mayores de 18 años)
+	|
+
+Votantes ingenuos=
+	Ingenuidad de las personas*Votantes
+	~	Personas
+	~	Número de votantes ingenuos
+	|
+
+Tasa de personas que logran la mayoría de edad(
+	[(2000,0)-(2100,1)],(2012,0.022),(2013,0.021),(2014,0.021),(2015,0.02),(2016,0.02),(\
+		2017,0.019),(2018,0.019),(2019,0.019),(2037,0.018),(2100,0.017))
+	~	1/Year
+	~	Tasa de personas que cumplen 18 años anualmente
+	|
+
+Votantes habilitados= INTEG (
+	Nuevos votantes habilitados-Votantes habilitados fallecidos,
+		2e+07)
+	~	Personas
+	~	Personas que pueden realizar el acto de sufragio
+	|
+
+Tasa de fallecimiento de adultos(
+	[(0,0)-(3000,10)],(2012,0.0555),(2013,0.0558),(2014,0.0561),(2015,0.0564),(2016,0.0567\
+		),(2017,0.0571),(2018,0.0575),(2019,0.0579),(2100,0.058))
+	~	1/Year
+	~	Tasa de adultos que fallecen al año y por ende dejan de ser votantes
+	|
+
+Participacion ciudadana(
+	[(2000,0)-(20100,90)],(2006,0.8871),(2011,0.837),(2014,0.8374),(2016,0.8295),(2018,0.8074\
+		),(2100,0.8))
+	~	Dmnl
+	~	Índice que indica el porcentaje de participación de la población votante
+	|
+
+Diferencia entre inversión real y planeada=
+	(1-Índice de Percepción de Corrupción(Time))*Inversión Planeada para la Educación
+	~	um
+	~	Cantidad de unidades monetarias perdidas por la corrupcion en un año
+	|
+
+Autoridades honestas=
+	Nivel de valores(Time)*Total de autoridades
+	~	Personas
+	~		|
+
+Probabilidad de aclarar la informacion=
+	Nivel de valores(Time)
+	~	Dmnl
+	~	Probabilidad de que la información sea aclarada por las autoridades
+	|
+
+Índice de Percepción de Corrupción(
+	[(2000,0)-(2100,1)],(2000,0.38),(2012,0.38),(2013,0.38),(2014,0.38),(2015,0.36),(2016\
+		,0.35),(2017,0.37),(2018,0.35),(2019,0.36),(2030,0.37),(2100,0.36))
+	~	Dmnl [0,1]
+	~	Índice que indica la corrupción percibida. El valor 1 representa el \
+		máximo nivel de transparencia, mientras que 0 representa el máximo nivel \
+		de corrupción.
+	|
+
+Nivel de valores(
+	[(2000,0)-(2100,1)],(2000,0.44),(2012,0.42),(2013,0.39),(2014,0.38),(2015,0.39),(2016\
+		,0.37),(2017,0.35),(2030,0.36),(2050,0.35),(2070,0.34),(2100,0.35))
+	~	Dmnl
+	~	Índice de valores percibido por la población
+	|
+
+Publicaciones de Fake News= INTEG (
+	Nuevas FN creadas con fines de lucro+Publicaciones Fake News Generadas por diversion\
+		+Nuevos Contenido-Antiguedad Publicaciones-Eliminacion,
+		1000)
+	~	Publicaciones
+	~	Numero de publicaciones de Fake News
+	|
+
+Observacion=
+	Umbral de reporte de publicacion falsa*Nuevas publicaciones que Superan el Limite del Umbral
+	~	Reportes/Year
+	~	Cantidad de reportes que han sido observado por el moredador
+	|
+
+Personas informadas=
+	Seguidores informados+Capacidad de distincion entre noticias falsas y verdaderas*Personas que creen en Fake News en redes sociales\
+		*Tasa de transición de creyente a informado
+	~	Personas/Year
+	~	Número de personas que se informan y dejan de creer en fake news al año
+	|
+
+Fuentes creadas por persona=
+	EXP(1.5)
+	~	Fuentes/(Personas*Year)
+	~	Número de fuentes que son creadas por persona al año
+	|
+
+Personas expuestas a FN=
+	IF THEN ELSE (Publicaciones de Fake News*Confianza en creer publicaciones de Rs*Alcance de Fake News\
+		*100>Poblacion limite,Poblacion limite,Publicaciones de Fake News*Confianza en creer publicaciones de Rs\
+		*Alcance de Fake News*100)
+	~	Personas/Year
+	~	Número de personas que son expuestas a fake news y se vuelven \
+		susceptibles de creer en ellas al año
+	|
+
+Poblacion limite=
+	2.4e+07
+	~	Personas/Year
+	~	Número de personas que ingresan a las redes sociales al año
+	|
+
+Confianza en creer publicaciones de Rs=
+	Ingenuidad de las personas*Tasa de confianza en publicaciones producto de la ingenuidad
+	~	1/Year
+	~	Indica el grado de confianza en creer una publicacion en las Redes Sociales
+	|
+
+Influyentes=
+	Seguidores de fuentes no fiables*Probabilidad de ser Creador de Contenido*Tasa de cambio para ser un creador de F no F
+	~	Personas/Year
+	~	Número de personas que se vuelven creadoras de fuentes no fiables al año
+	|
+
+Creacion de Fuente no Fiables=
+	Creador de Fuentes no Fiables*Probabilidad de Creacion de Fuente(Creador de Fuentes no Fiables\
+		)*Fuentes creadas por persona
+	~	Fuentes/Year
+	~	Número de fuentes no fiables que son creadas al año
+	|
+
+Tasa de confianza en publicaciones producto de la ingenuidad=
+	0.9
+	~	1/Year
+	~	Tasa que indica el grado de confianza en publicaciones debido a la \
+		ingenuidad
+	|
+
+Creadores informados=
+	Capacidad de distincion entre noticias falsas y verdaderas*Creador de Fuentes no Fiables\
+		*Tasa de transicion de creador creyente a informado
+	~	Personas/Year
+	~	Número de creadores de fuentes no fiables que se informan y dejan de \
+		serlo al año
+	|
+
+Tasa de transicion de creador creyente a informado=
+	0.17
+	~	1/Year
+	~	Tasa que muestra la relación de creadores de fuentes no fiables que se \
+		informan y dejan de serlo respecto del total
+	|
+
+Tasa de transición de creyente a informado=
+	0.1
+	~	1/Year
+	~	Tasa que indica la razón de creyentes que se informan y dejan de creer en \
+		fake news al año
+	|
+
+Tasa de cambio para ser un creador de F no F=
+	0.04
+	~	1/Year
+	~	Tasa que indica el porcentaje anual de seguidores de fuentes no fiables \
+		que se vuelve un creador de este tipo de contenido
+	|
+
+Frecuencia de asignación de presupuesto=
+	1
+	~	Year
+	~	Tiempo que toma asignar el presupuesto anual
+	|
+
+Tasa de nuevos creadores=
+	0.02
+	~	1/Year
+	~	Proporcion de los seguidores que pasan ser Creador de FN
+	|
+
+Impacto por publicacion=
+	Reacciones por publicacion/Umbral de reacciones
+	~	1/Publicacion
+	~	Es un factor adimensional por publicacion que afecta directamente a la \
+		atractividad FN
+	|
+
+Sueldo ideal=
+	6000
+	~	um/Personas
+	~	Remuneracion ideal que una persona deberia tener
+	|
+
+Nuevos seguidores de FN=
+	(Exposicion a Fake News*Personas con Tiempo Libre)*Tasa de nuevos seguidores
+	~	Personas/Year
+	~	Cantidad de personas que ingresan a ser seguidores de FN
+	|
+
+Exposicion a Fake News=
+	0.4
+	~	Dmnl
+	~	Un Factor de Exposicion a Fake News, mientras haya presencia habra nuevos \
+		seguidores proporcional a la exposicion
+	|
+
+Presupuesto asignado para Educación=
+	IF THEN ELSE(Nivel Económico del País*Porcentaje asignado a educación-Presupuesto para Educación\
+		>0, (Nivel Económico del País
+	*Porcentaje asignado a educación-Presupuesto para Educación)/Frecuencia de asignación de presupuesto\
+		 , 0 )
+	~	um/Year
+	~	Presupuesto anual asignado al area de educacion
+	|
+
+Publicaciones Fake News Generadas por diversion=
+	Creador de Fake News*Publicaciones por creador
+	~	Publicaciones/Year
+	~	La cantidad total de publicaciones de Fake News que ha sido creada por \
+		diversion o entretenimiento personal
+	|
+
+Nuevas FN creadas con fines de lucro=
+	Tasa de Publicación de FN*Personas que crean FN para generar ganancias
+	~	Publicaciones/Year
+	~	publicaciones por año creadas para generar ganancias
+	|
+
+Publicaciones por creador=
+	1.4
+	~	Publicaciones/(Personas*Year)
+	~	Cantidad Promedio de Publicacion que crea un Creador de FN
+	|
+
+Umbral de reacciones=
+	1e+06
+	~	Reacciones
+	~	Cantidad Minima de Reaciones para que tenga impacto una publicacion
+	|
+
+Tasa de Publicación de FN=
+	2
+	~	Publicaciones/(Year*Personas)
+	~	cantidad de publicaciones de fn por personas que crean al año para \
+		generar ganancias
+	|
+
+Fake News creadas con fines de lucro= INTEG (
+	Nuevas FN creadas con fines de lucro,
+		0)
+	~	Publicaciones
+	~	Publicaciones fake news creadas para generar ingresos al creador
+	|
+
+Tasa de nuevos seguidores=
+	0.1
+	~	1/Year
+	~	Proporcion de Personas que ingresan a ser seguidores de FN
+	|
+
+Nuevas publicaciones que Superan el Limite del Umbral=
+	IF THEN ELSE(Publicaciones Fake News Reportadas>0, IF THEN ELSE( Reportes/Publicaciones Fake News Reportadas
+	>Umbral de reporte de publicacion falsa ,Publicaciones Fake News Reportadas*Frecuencia de superación del umbral\
+		  , 0 ), 0)
+	~	Publicaciones/Year
+	~	Cantidad de Publicaciones reportadas que han superado la cantidad promedio \
+		de reportes que pasan a ser revisadas por los moredadores
+	|
+
+Despido=
+	IF THEN ELSE( Publicaciones Fake News Reportadas que superan el umbral de reportes>Cantidad de Publicaciones Revisadas por Persona\
+		*Moderadores, 0, Moderadores*Tasa de despidos)
+	~	Personas/Year
+	~	Cantidad de Moredadores que ya no requiere de sus servicios
+	|
+
+Tasa de Contratación=
+	0.2
+	~	1/Year
+	~	Una proporcion Moredadores que seran contratados para cubrir la cantidad \
+		de reportes a revisar
+	|
+
+Difusion de fuentes no fiables=
+	Seguidores de fuentes no fiables*Tasa de difusion de fuentes no fiables
+	~	Dmnl
+	~	Número que indica
+	|
+
+Tasa de difusion de fuentes no fiables=
+	14.28
+	~	1/Personas
+	~	Relación que indica el número de fuentes no fiables que alcanzan a una \
+		persona
+	|
+
+Seguidores informados=
+	Creadores informados+Capacidad de distincion entre noticias falsas y verdaderas*Seguidores de fuentes no fiables\
+		*Tasa de asimilacion de informacion
+	~	Personas/Year
+	~	Número de seguidores de fuentes no fiables que se informan y dejan de \
+		seguir estas fuentes al año
+	|
+
+Frecuencia de superación del umbral=
+	0.5
+	~	1/Year
+	~	es una proporcion que posee por anio que pasa las publicaciones reportadas \
+		para ser revisada por el moredador
+	|
+
+Nuevos Reportes de Publicaciones antiguas=
+	Publicaciones Fake News Reportadas*Tasa de reportes de publicaciones antiguas
+	~	Reportes/Year
+	~	Cantidad nuevos reportes proveniente de publicaciones antiguas reportadas \
+		anteriormente
+	|
+
+Contratacion=
+	IF THEN ELSE(Moderadores*Cantidad de Publicaciones Revisadas por Persona>Publicaciones Fake News Reportadas que superan el umbral de reportes
+	, 0*Moderadores*Tasa de Contratación , Moderadores*Tasa de Contratación)
+	~	Personas/Year
+	~		|
+
+Tasa de reportes de publicaciones antiguas=
+	0.7
+	~	Reportes/(Publicaciones*Year)
+	~	Una proporcion de la cantidad de Reportes de las publicaciones antiguas \
+		que no han sido Reportado
+	|
+
+Tasa de despidos=
+	0.2
+	~	1/Year
+	~	Una proporcion de los moderadores ya no requiere de su servicios
+	|
+
+Tasa de asimilacion de informacion=
+	0.17
+	~	1/Year
+	~	Tasa de personas seguidoras de fuentes no fiables que se informan y dejan \
+		de seguir estas al año
+	|
+
+Reacciones por publicacion=
+	100000
+	~	Reacciones/Publicacion
+	~	Cantidad de reacciones por publicacion. (Likes, emoticones)
+	|
+
+Personas que crean FN para generar ganancias=
+	Impulso de crear FN para generar ganancia*Personas con Tiempo Libre
+	~	Personas
+	~	cantidad de personas que crean fn para generar ganancias
+	|
+
+Probabilidad de tener pasatiempo de crear FN=
+	0.04*Exposicion a Fake News
+	~	Dmnl
+	~	Es la probabilidad de que un seguidor se vuelve creador, esta probabiliad \
+		depende de la exposicion de FN
+	|
+
+Seguidores de Fake News= INTEG (
+	Nuevos seguidores de FN-Nuevos creadores de Fake News,
+		0)
+	~	Personas
+	~	Cantidad de Seguidores de Fake News
+	|
+
+Porcentaje de ganancia por publicaciones=
+	0.01
+	~	Dmnl
+	~	porcentaje de ganancias por vistas de una publicacion
+	|
+
+Presupuesto mínimo para la calidad de Educación=
+	1.5e+06
+	~	um/Year
+	~	Importe anual minimo que se necesita para tener una educacion de calidad
+	|
+
+Presupuesto para Educación= INTEG (
+	Presupuesto asignado para Educación-Inversión en Educación,
+		1e+06)
+	~	um
+	~	Presupuesto restante para el area de educacion
+	|
+
+Investigación en la educación=
+	IF THEN ELSE(Inversión en Educación-Presupuesto mínimo para la calidad de Educación\
+		>0 , 1 , Inversión en Educación/Presupuesto mínimo para la calidad de Educación\
+		)
+	~	Dmnl
+	~	Indice que indica la cantidad de investigacion realizada en el area \
+		educativa
+	|
+
+Capacidad de distincion entre noticias falsas y verdaderas=
+	(2*Aprendizaje por errores+4*Nivel de Educación+Probabilidad de aclarar la informacion\
+		+8*(1-Ingenuidad de las personas))/15
+	~	Dmnl
+	~	Porcentaje que indica la relacion entre la cantidad de noticias que \
+		distingue entre verdadero y falso respecto del total
+	|
+
+Porcentaje asignado a educación=
+	(1-"Discrepancia-"*0.5)*Porcentaje base a Educación
+	~	Dmnl
+	~	Porcentaje final real del presupuesto asignado a educacion
+	|
+
+Porcentaje base a Educación=
+	0.16
+	~	Dmnl
+	~	Porcentaje minimo del presupuesto nacional que se le debe asignar al \
+		sector educacion
+	|
+
+Inversión en Educación=
+	Presupuesto para Educación*Tasa anual de inversión
+	~	um/Year
+	~	Porcentaje de inversion a la educacion por año
+	|
+
+Inversión Planeada para la Educación=
+	Nivel Económico del País*Porcentaje base a Educación
+	~	um
+	~	Inversion que se espera asignar al area de educacion
+	|
+
+Tasa anual de inversión=
+	0.91
+	~	1/Year
+	~	Porcentaje de inversion al año
+	|
+
+"Discrepancia-"=
+	Diferencia entre inversión real y planeada/Inversión Planeada para la Educación
+	~	Dmnl
+	~	Diferencia relativa entre la relacion planeada y la perdida
+	|
+
+Educación orientada al trabajo=
+	0.8*Nivel de Educación
+	~	Dmnl
+	~	Porcentaje de educacion que se orienta al trabajo
+	|
+
+Nivel de Educación=
+	Investigación en la educación
+	~	Dmnl
+	~		|
+
+Total de autoridades=
+	4771
+	~	Personas
+	~	Personas en total que ocupan cargos en el gobierno como congresistas, \
+		alcaldes o el presidente
+	|
+
+Reportes= INTEG (
+	Nuevos Reportes de Publicaciones antiguas+Nuevos reportes de publicaciones-Observacion\
+		,
+		1000)
+	~	Reportes
+	~	Cantidad de Reportes acumulados de todas publicaciones
+	|
+
+Eliminacion de fuentes no fiables=
+	Fuentes no fiables*Tasa de Eliminacion
+	~	Fuentes/Year
+	~	Número de fuentes no fiables que son eliminadas al año
+	|
+
+Antiguedad Publicaciones=
+	Publicaciones de Fake News*Tasa de Antiguedad
+	~	Publicaciones/Year
+	~	Numero promedio de publicaciones muy antiguas por año
+	|
+
+Moderadores= INTEG (
+	Contratacion-Despido,
+		10000)
+	~	Personas
+	~	Cantidad de Modedadores Contratadospara las revisiones de publicaciones
+	|
+
+Creador de Fuentes no Fiables= INTEG (
+	Influyentes-Creadores informados,
+		10000*0.1)
+	~	Personas
+	~	Número de creadores de fuentes no fiables
+	|
+
+Fuentes no fiables= INTEG (
+	Creacion de Fuente no Fiables-Eliminacion de fuentes no fiables,
+		500000)
+	~	Fuentes
+	~	Número de fuentes que llevan a la creación de fake news
+	|
+
+Tasa de Antiguedad=
+	0.005
+	~	1/Year
+	~	Tasa que indica el grado de antiguedad de una publicacion
+	|
+
+Tasa de Eliminacion=
+	RANDOM NORMAL(0.05, 0.6 , 0.25 , 0.05 , 1555 )
+	~	1/Year
+	~	Tasa que expresa el porcentaje de fuentes no fiables que son eliminadas al \
+		año
+	|
+
+Fanatismo=
+	Personas que creen en Fake News en redes sociales*Tasa de Fanatismo
+	~	Personas/Year
+	~	Número de personas que se vuelven fanáticas y comienzan a seguir fuentes \
+		no fiables al año
+	|
+
+Seguidores de fuentes no fiables= INTEG (
+	Fanatismo-Seguidores informados,
+		30000*0.1)
+	~	Personas
+	~	Número de personas que siguen fuentes no fiables
+	|
+
+Tasa Publicaciones anual=
+	RANDOM UNIFORM(0, 8 , 31 )
+	~	Publicaciones/(Fuentes*Year)
+	~	Tasa que indica el grado de publicaciones anuales, asumiendo que se \
+		distribuye uniformemente
+	|
+
+Tasa de Fanatismo=
+	0.26
+	~	1/Year
+	~	Tasa que indica el porcentaje de personas que creen en fake news que \
+		comienzan a seguir fuentes no fiables al año
+	|
+
+Errores reflexionados=
+	Errores*Probabilidad de reflexion sobre errores(Errores)
+	~	Errores/Year
+	~	Numero de errores que se aprendieron en base a la experiencia
+	|
+
+Nuevos errores cometidos=
+	Errores Anual*Probabilidad de comete errores
+	~	Errores/Year
+	~	Indica el nuevo numero de errores cometidos por cada año
+	|
+
+Convencimiento=
+	Personas potenciales con capacidad en creer en FN*Tasa Conversion de Personas que cree
+	~	Personas/Year
+	~	Número de personas que son convencidas y pasan a creer en fake news al \
+		año
+	|
+
+Alcance de Fake News=
+	Difusion de fuentes no fiables*Personas que creen en Fake News en redes sociales/Publicaciones de Fake News
+	~	Personas/Publicaciones
+	~	Número de personas a las que llega una publicación
+	|
+
+Errores= INTEG (
+	Nuevos errores cometidos-Errores reflexionados,
+		25*0.1)
+	~	Errores
+	~	Numero de errores que se cometen por año
+	|
+
+Errores Anual=
+	RANDOM UNIFORM(7 , 22 , 4444 )
+	~	Errores/Year
+	~	Numero de errores en un año, asumiendo que se distribuye uniformemente
+	|
+
+Personas potenciales con capacidad en creer en FN= INTEG (
+	Personas expuestas a FN-Convencimiento,
+		1.3e+06)
+	~	Personas
+	~	Número de personas que son propensas a creer en fake news
+	|
+
+Tasa Conversion de Personas que cree=
+	0.04
+	~	1/Year
+	~	Relación de personas que son convencidas de creer en fake news al año
+	|
+
+Personas que creen en Fake News en redes sociales= INTEG (
+	Convencimiento-Personas informadas,
+		52000)
+	~	Personas
+	~	Número de personas que creen en fake news en redes sociales
+	|
+
+Probabilidad de comete errores=
+	Ingenuidad de las personas
+	~	Dmnl
+	~	Probabilidad de que se cometa un error
+	|
+
+Cantidad de Publicaciones Revisadas por Persona=
+	5000
+	~	Publicaciones/Personas
+	~	Cantidad promedio de publicaciones revisada por moredador
+	|
+
+Publicaciones Fake News Reportadas que superan el umbral de reportes= INTEG (
+	Nuevas publicaciones que Superan el Limite del Umbral-Eliminacion,
+		0)
+	~	Publicaciones
+	~	Cantidad de publicaciones que superan el limite del umbral que estan a la \
+		espera de ser revisada por el moredador
+	|
+
+Umbral de reporte de publicacion falsa=
+	1
+	~	Reportes/Publicaciones
+	~	Cantidad minima de reporte por publicacion para que la publicacion pase a \
+		ser revisada por el moredador
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 3000
+	~	Year
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 2012
+	~	Year
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP 
+	~	Year [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Year [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Principal
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,60,0
+10,1,Confianza en creer publicaciones de Rs,-328,131,64,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+10,2,Ingenuidad de las personas,-903,551,56,19,8,3,0,4,0,0,0,0,-1--1--1,255-0-0,|12||0-0-0,0,0,0,0,0,0
+10,3,Capacidad de distincion entre noticias falsas y verdaderas,-922,1391,77,28,8,3,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+10,4,Personas potenciales con capacidad en creer en FN,218,683,71,35,3,131,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+10,5,Personas que creen en Fake News en redes sociales,-184,891,61,31,3,131,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+10,6,Seguidores de fuentes no fiables,56,1166,59,27,3,131,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+10,7,Difusion de fuentes no fiables,431,1007,66,23,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,8,Alcance de Fake News,589,716,56,21,8,131,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+10,9,Tasa de reportes,1930,1365,53,11,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+10,10,Publicaciones de Fake News,924,567,85,47,3,131,0,4,0,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+10,11,Fuentes no fiables,912,935,65,24,3,131,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,12,2,1,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(-592,185)|
+1,13,1,51,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(-52,255)|
+1,14,4,36,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(-94,634)|
+1,15,8,51,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(293,620)|
+1,16,6,7,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(362,1057)|
+1,17,11,62,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(941,873)|
+1,18,9,123,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(1887,1191)|
+1,19,5,8,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(20,935)|
+1,20,7,8,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(565,770)|
+1,21,2,3,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(-753,1083)|
+1,22,3,56,1,0,43,0,3,64,0,0-0-255,|12||0-0-0,1|(-519,1409)|
+12,23,0,-1131,-16,216,56,0,7,0,8,0,0,0,0,-1--1--1,0-0-255,|72||255-255-255,0,0,0,0,0,0
+Fake News
+12,24,0,98,808,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R
+10,25,Probabilidad de comete errores,-734,450,51,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+10,26,Aprendizaje por errores,-479,768,52,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+10,27,Probabilidad de reflexion sobre errores,-287,592,72,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+1,28,26,2,1,0,45,0,3,64,0,255-0-0,|12||0-0-0,1|(-623,660)|
+1,29,27,26,1,0,0,0,0,64,0,-1--1--1,,1|(-365,726)|
+1,30,2,25,1,0,0,0,0,64,0,-1--1--1,,1|(-824,518)|
+10,31,Errores,-412,393,40,20,3,3,0,4,0,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+1,32,25,136,1,0,0,0,0,64,0,-1--1--1,,1|(-654,368)|
+12,33,0,-529,525,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B
+1,34,36,5,4,0,0,22,0,0,0,-1--1--1,,1|(-184,806)|
+1,35,36,4,100,0,0,22,0,0,0,-1--1--1,,1|(-184,683)|
+11,36,0,-184,746,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,37,Convencimiento,-125,746,51,11,40,3,0,4,-1,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+10,38,Tasa Conversion de Personas que cree,-33,497,64,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,39,38,36,1,0,0,0,0,64,0,-1--1--1,,1|(-159,574)|
+12,40,48,38,983,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,41,43,6,4,0,0,22,0,0,0,-1--1--1,,1|(37,1103)|
+1,42,43,40,100,0,0,22,0,0,0,-1--1--1,,1|(37,1021)|
+11,43,48,37,1060,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,44,Fanatismo,37,1079,33,11,40,3,0,4,-1,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,45,5,43,1,0,0,0,0,64,0,-1--1--1,,1|(-136,1010)|
+10,46,Tasa de Fanatismo,-68,995,59,11,8,3,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,47,46,43,1,0,0,0,0,64,0,-1--1--1,,1|(-47,997)|
+12,48,48,216,397,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,49,51,4,4,0,0,22,0,0,0,-1--1--1,,1|(216,609)|
+1,50,51,48,100,0,0,22,0,0,0,-1--1--1,,1|(216,482)|
+11,51,48,216,565,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,52,Personas expuestas a FN,274,565,50,19,40,3,0,4,-1,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+12,53,48,-181,1393,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,54,56,53,4,0,0,22,0,0,0,-1--1--1,,1|(-181,1267)|
+1,55,56,5,100,0,0,22,0,0,0,-1--1--1,,1|(-227,1091)|
+11,56,48,-227,1267,8,6,33,3,0,0,2,0,0,0,0,0,0,0,0,0
+10,57,Personas informadas,-270,1267,35,19,40,3,0,4,-1,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,58,5,56,1,0,0,0,0,64,0,-1--1--1,,1|(-240,1039)|
+12,59,48,997,1007,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,60,62,10,4,0,0,22,0,0,0,-1--1--1,,1|(999,740)|
+1,61,62,59,100,0,0,22,0,0,0,-1--1--1,,1|(999,938)|
+11,62,48,999,872,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,63,Nuevos Contenido,1066,872,59,11,40,3,0,4,-1,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+10,64,Tasa Publicaciones anual,1258,1062,61,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+12,65,48,918,1156,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,66,68,11,4,0,0,22,0,0,0,-1--1--1,,1|(918,1007)|
+1,67,68,65,100,0,0,22,0,0,0,-1--1--1,,1|(918,1110)|
+11,68,48,918,1064,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,69,Creacion de Fuente no Fiables,918,1091,63,19,40,3,0,4,-1,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+10,70,Probabilidad de Creacion de Fuente,713,969,63,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,71,70,68,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(843,1006)|
+12,72,48,1168,464,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,73,75,72,4,0,0,22,0,0,0,-1--1--1,,1|(1249,460)|
+1,74,75,10,100,0,0,22,0,0,0,-1--1--1,,1|(1326,567)|
+11,75,48,1326,460,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,76,Eliminacion,1326,479,36,11,40,3,0,4,-1,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+1,77,10,8,1,0,43,0,2,64,0,-1--1--1,|12||0-0-0,1|(756,665)|
+1,78,10,51,1,0,0,0,0,64,0,-1--1--1,,1|(523,490)|
+12,79,48,602,1125,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,80,Probabilidad de ser Creador de Contenido,451,1116,72,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+10,81,Creador de Fuentes no Fiables,780,1322,58,32,3,131,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,82,84,81,4,0,0,22,0,0,0,-1--1--1,,1|(602,1322)|
+1,83,84,79,100,0,0,22,0,0,0,-1--1--1,,1|(602,1180)|
+11,84,1432,602,1235,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,85,Influyentes,602,1254,34,11,40,3,0,4,-1,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,86,80,85,1,0,0,0,0,64,0,-1--1--1,,1|(464,1202)|
+1,87,6,84,1,0,0,0,0,64,0,-1--1--1,,1|(344,1234)|
+1,88,81,68,1,0,0,0,0,64,0,-1--1--1,,1|(895,1164)|
+12,89,48,54,1415,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,90,92,89,4,0,0,22,0,0,0,-1--1--1,,1|(54,1355)|
+1,91,92,6,100,0,0,22,0,0,0,-1--1--1,,1|(54,1242)|
+11,92,48,54,1297,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,93,Seguidores informados,98,1297,36,19,40,3,0,4,-1,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,94,92,56,1,0,0,0,0,64,0,-1--1--1,,1|(-44,1306)|
+1,95,6,92,1,0,0,0,0,64,0,-1--1--1,,1|(119,1232)|
+10,96,Umbral de reporte de publicacion falsa,2310,546,69,19,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+10,97,Publicaciones Fake News Reportadas,1622,701,76,38,3,131,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+10,98,Publicaciones Fake News Reportadas que superan el umbral de reportes,1603,321,95,42,3,131,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,99,100,98,4,0,0,22,0,0,0,-1--1--1,,1|(1691,399)|
+11,100,1366,1691,443,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,101,Nuevas publicaciones que Superan el Limite del Umbral,1691,479,83,28,40,3,0,4,-1,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,102,97,100,1,0,0,0,0,64,0,-1--1--1,,1|(1577,535)|
+1,103,96,100,1,0,0,0,0,64,0,-1--1--1,,1|(1935,324)|
+1,104,75,98,100,0,0,22,0,0,0,-1--1--1,,1|(1603,460)|
+10,105,Cantidad de Publicaciones Revisadas por Persona,2347,-138,76,28,8,131,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+10,106,Moderadores,2257,202,51,25,3,131,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,107,26,3,1,0,0,0,0,64,0,-1--1--1,,1|(-490,1084)|
+10,108,Probabilidad de aclarar la informacion,-1200,1419,68,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+1,109,108,3,1,0,0,0,0,64,0,-1--1--1,,1|(-974,1478)|
+10,110,Reportes,1923,731,40,20,3,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,111,110,100,1,0,0,0,0,64,0,-1--1--1,,1|(1996,539)|
+12,112,48,1922,904,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,113,115,112,4,0,0,22,0,0,0,-1--1--1,,1|(1925,849)|
+1,114,115,110,100,0,0,22,0,0,0,-1--1--1,,1|(1925,770)|
+11,115,48,1925,796,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,116,Observacion,1974,796,41,11,40,3,0,4,-1,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,117,100,115,1,0,0,0,0,64,0,-1--1--1,,1|(2060,555)|
+1,118,116,115,0,0,0,0,0,64,0,-1--1--1,,1|(1933,796)|
+1,119,96,115,1,0,0,0,0,64,0,-1--1--1,,1|(2130,845)|
+12,120,48,1800,1189,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,121,123,110,4,0,0,22,0,0,0,-1--1--1,,1|(1800,731)|
+1,122,123,120,100,0,0,22,0,0,0,-1--1--1,,1|(1800,1100)|
+11,123,48,1800,1011,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,124,Nuevos reportes de publicaciones,1800,1038,64,19,40,3,0,4,-1,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+10,125,Publicaciones de Fake New No Reportada,1354,817,67,31,3,131,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,126,62,125,4,0,0,22,0,0,0,-1--1--1,,1|(999,817)|
+12,128,48,-182,394,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,129,131,128,4,0,0,22,0,0,0,-1--1--1,,1|(-239,399)|
+1,130,131,31,100,0,0,22,0,0,0,-1--1--1,,1|(-335,399)|
+11,131,48,-291,399,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,132,Errores reflexionados,-291,426,43,19,40,3,0,4,-1,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+12,133,48,-613,391,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,134,136,31,4,0,0,22,0,0,0,-1--1--1,,1|(-489,397)|
+1,135,136,133,100,0,0,22,0,0,0,-1--1--1,,1|(-571,397)|
+11,136,48,-532,397,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,137,Nuevos errores cometidos,-532,424,50,19,40,3,0,4,-1,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+10,138,Errores Anual,-473,283,52,11,8,3,0,4,0,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+1,139,138,136,1,0,0,0,0,64,0,-1--1--1,,1|(-474,312)|
+1,140,27,131,1,0,0,0,0,64,0,-1--1--1,,1|(-277,490)|
+1,141,31,131,1,0,0,0,0,64,0,-1--1--1,,1|(-355,344)|
+1,142,144,97,4,0,0,22,0,0,0,-1--1--1,,1|(1617,774)|
+1,143,144,125,100,0,0,22,0,0,0,-1--1--1,,1|(1516,818)|
+11,144,3852,1617,818,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,145,Nuevas publicaciones reportadas,1617,855,99,29,40,131,0,4,-1,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,146,125,144,1,0,0,0,0,64,0,-1--1--1,,1|(1484,778)|
+1,148,144,123,1,0,0,0,0,64,0,-1--1--1,,1|(1719,889)|
+12,149,48,2258,407,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,150,152,149,4,0,0,22,0,0,0,-1--1--1,,1|(2251,358)|
+1,151,152,106,100,0,0,22,0,0,0,-1--1--1,,1|(2251,266)|
+11,152,48,2251,310,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,153,Despido,2287,310,28,11,40,3,0,4,-1,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+12,154,48,2249,32,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,155,157,106,4,0,0,22,0,0,0,-1--1--1,,1|(2249,140)|
+1,156,157,154,100,0,0,22,0,0,0,-1--1--1,,1|(2249,65)|
+11,157,48,2249,96,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,158,Contratacion,2298,96,41,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,159,105,157,1,0,0,0,0,64,0,-1--1--1,,1|(2376,-15)|
+1,160,105,152,1,0,0,0,0,64,0,-1--1--1,,1|(2496,132)|
+1,161,98,157,1,0,0,0,0,64,0,-1--1--1,,1|(1884,152)|
+1,162,98,152,1,0,0,0,0,64,0,-1--1--1,,1|(1923,274)|
+1,163,106,157,1,0,0,0,0,64,0,-1--1--1,,1|(2312,140)|
+1,164,106,152,1,0,0,0,0,64,0,-1--1--1,,1|(2216,249)|
+12,165,48,560,822,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,166,168,165,4,0,0,22,0,0,0,-1--1--1,,1|(667,818)|
+1,167,168,11,100,0,0,22,0,0,0,-1--1--1,,1|(912,818)|
+11,168,48,773,818,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,169,Eliminacion de fuentes no fiables,836,818,55,19,40,3,0,4,-1,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+10,170,Tasa de Eliminacion,733,738,36,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,171,170,168,0,0,0,0,0,64,0,-1--1--1,,1|(752,778)|
+1,172,11,168,1,0,0,0,0,64,0,-1--1--1,,1|(844,857)|
+12,173,48,389,1498,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,174,176,173,4,0,0,22,0,0,0,-1--1--1,,1|(389,1430)|
+1,175,176,81,100,0,0,22,0,0,0,-1--1--1,,1|(780,1430)|
+11,176,48,575,1430,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,177,Creadores informados,575,1457,36,19,40,3,0,4,-1,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,178,176,92,1,0,0,0,0,64,0,-1--1--1,,1|(327,1338)|
+1,179,81,176,1,0,0,0,0,64,0,-1--1--1,,1|(690,1393)|
+1,180,3,176,1,0,0,0,0,64,0,-1--1--1,,1|(-201,1606)|
+1,181,3,92,1,0,0,0,0,64,0,-1--1--1,,1|(-446,1463)|
+12,182,48,1041,244,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,183,185,182,4,0,0,22,0,0,0,-1--1--1,,1|(1042,304)|
+1,184,185,10,100,0,0,22,0,0,0,-1--1--1,,1|(1042,567)|
+11,185,48,1042,362,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,186,Antiguedad Publicaciones,1094,362,44,19,40,3,0,4,-1,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+10,187,Tasa de Antiguedad,844,202,37,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+1,188,187,185,1,0,0,0,0,64,0,-1--1--1,,1|(879,279)|
+1,189,10,185,1,0,0,0,0,64,0,-1--1--1,,1|(1016,430)|
+12,190,48,1893,596,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,191,193,110,4,0,0,22,0,0,0,-1--1--1,,1|(1893,687)|
+1,192,193,190,100,0,0,22,0,0,0,-1--1--1,,1|(1893,627)|
+11,193,48,1893,657,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,194,Nuevos Reportes de Publicaciones antiguas,1972,657,71,19,40,3,0,4,-1,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,195,97,193,0,0,0,0,0,64,0,-1--1--1,,1|(1784,674)|
+1,196,70,80,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(543,997)|
+12,197,0,155,782,47,19,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Generacion de creyentes
+12,198,0,140,1016,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+R
+12,199,0,148,977,47,19,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Generacion de seguidores
+12,200,0,638,1146,20,20,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B
+12,201,0,627,1092,64,19,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Creacion de fuentes no fiables
+12,202,0,-547,567,52,19,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Aprendizaje por errores
+10,203,Nivel de Educación,-1123,937,39,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,204,203,3,1,0,0,0,0,64,0,-1--1--1,,1|(-1073,1148)|
+1,205,203,2,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(-1071,710)|
+10,206,Porcentaje de adultos sin educación básica,-1141,505,39,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,207,206,2,1,0,0,0,0,64,0,-1--1--1,,1|(-1021,499)|
+10,208,Publicaciones Fake News Generadas por diversion,1074,744,69,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,209,208,10,1,0,0,0,0,64,0,-1--1--1,,1|(1061,650)|
+10,210,Tasa de difusion de fuentes no fiables,236,1050,62,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,211,210,7,1,0,0,0,0,64,0,-1--1--1,,1|(310,988)|
+10,212,Tasa de reportes de publicaciones antiguas,1721,778,70,19,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,213,212,193,1,0,0,0,0,64,0,-1--1--1,,1|(1790,702)|
+10,214,Frecuencia de superación del umbral,1871,546,70,19,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,215,214,101,1,0,0,0,0,64,0,-1--1--1,,1|(1792,534)|
+10,216,Tasa de despidos,2422,400,55,11,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,217,216,153,1,0,0,0,0,64,0,-1--1--1,,1|(2386,336)|
+10,218,Tasa de Contratación,2449,73,42,19,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,219,218,158,1,0,0,0,0,64,0,-1--1--1,,1|(2376,107)|
+10,220,Tasa de asimilacion de informacion,172,1404,62,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,221,220,93,0,0,0,0,0,64,0,-1--1--1,,1|(138,1356)|
+10,222,Tasa de confianza en publicaciones producto de la ingenuidad,-594,96,91,28,8,3,0,4,0,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+1,223,222,1,0,0,0,0,0,64,0,-1--1--1,,1|(-455,115)|
+10,224,Tasa de transición de creyente a informado,-357,1129,68,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,225,224,57,1,0,0,0,0,64,0,-1--1--1,,1|(-364,1203)|
+10,226,Tasa de transicion de creador creyente a informado,599,1547,68,28,8,3,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,227,226,177,0,0,0,0,0,64,0,-1--1--1,,1|(587,1504)|
+10,228,Tasa de cambio para ser un creador de F no F,449,1289,79,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-0,|12||255-128-0,0,0,0,0,0,0
+1,229,228,85,1,0,0,0,0,64,0,-1--1--1,,1|(542,1286)|
+10,230,Fuentes creadas por persona,1056,1240,52,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,231,230,69,1,0,0,0,0,64,0,-1--1--1,,1|(1041,1132)|
+10,232,Tasa de eliminacion de publicaciones reportadas,1455,605,79,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-0,|12||0-0-0,0,0,0,0,0,0
+1,233,232,76,1,0,0,0,0,64,0,-1--1--1,,1|(1410,549)|
+10,234,Poblacion limite,569,617,50,11,8,3,0,4,0,0,0,0,-1--1--1,255-128-0,|12||0-0-0,0,0,0,0,0,0
+1,235,234,52,1,0,0,0,0,64,0,-1--1--1,,1|(461,563)|
+10,236,Nuevas FN creadas con fines de lucro,1218,687,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,237,236,10,1,0,0,0,0,64,0,-1--1--1,,1|(1106,617)|
+10,238,Nivel de valores,-1402,1284,32,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,239,238,108,1,0,0,0,0,64,0,-1--1--1,,1|(-1291,1323)|
+10,240,Time,-1170,1289,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,241,240,108,1,0,0,0,0,64,0,-1--1--1,,1|(-1145,1340)|
+1,242,31,26,1,0,0,0,0,64,0,-1--1--1,,1|(-468,564)|
+10,243,Media de años de cambios en errores,-674,741,61,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,244,243,26,1,0,0,0,0,64,0,-1--1--1,,1|(-582,776)|
+10,245,Publicaciones por eliminar,1596,6,62,35,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,246,105,245,1,0,0,0,0,64,0,-1--1--1,,1|(1889,-154)|
+1,247,106,245,1,0,0,0,0,64,0,-1--1--1,,1|(1962,17)|
+1,248,98,245,1,0,0,0,0,64,0,-1--1--1,,1|(1562,159)|
+1,249,245,75,1,0,0,0,0,64,0,-1--1--1,,1|(1392,213)|
+10,250,Publicaciones correctamente reportadas,1278,1541,85,49,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,251,145,250,1,0,0,0,0,64,0,-1--1--1,,1|(1503,1160)|
+1,252,3,250,1,0,0,0,0,64,0,-1--1--1,,1|(216,1811)|
+1,253,250,124,1,0,0,0,0,64,0,-1--1--1,,1|(1598,1337)|
+1,254,81,80,1,0,0,0,0,64,0,-1--1--1,,1|(702,1060)|
+1,255,240,2,1,0,0,0,0,64,0,-1--1--1,,1|(-1249,857)|
+10,256,Tasa de Creacion Contenido,1212,1153,61,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,257,256,62,0,0,0,0,0,64,0,-1--1--1,,1|(1104,1011)|
+1,258,100,97,100,0,0,22,0,0,0,-1--1--1,,1|(1691,557)|
+10,259,Tasa de transición,1375,954,57,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,261,259,145,1,0,0,0,0,64,0,-1--1--1,,1|(1444,895)|
+10,262,Nivel de Censura,1365,696,55,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,264,10,232,1,0,0,0,0,64,0,-1--1--1,,1|(1187,610)|
+1,265,262,232,1,0,0,0,0,64,0,-1--1--1,,1|(1442,656)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Vista Política
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,80,0
+10,1,Total de autoridades,255,175,39,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,Nivel de valores,-102,179,53,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,Votos producto de Fake News,521,131,70,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,Votantes,989,79,32,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,Participacion ciudadana,1025,305,42,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,Ingenuidad de las personas,791,301,60,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,7,Índice de Percepción de Corrupción,411,-75,68,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,8,Time,32,-87,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,9,Autoridades honestas,65,61,40,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,10,2,9,1,0,0,0,0,64,0,-1--1--1,,1|(-70,111)|
+1,11,1,9,1,0,0,0,0,64,0,-1--1--1,,1|(203,96)|
+1,12,8,9,1,0,0,0,0,64,0,-1--1--1,,1|(65,-15)|
+10,13,Votantes habilitados,1242,81,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,14,48,1241,-54,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,15,17,14,4,0,0,22,0,0,0,-1--1--1,,1|(1243,-16)|
+1,16,17,13,100,0,0,22,0,0,0,-1--1--1,,1|(1243,43)|
+11,17,48,1243,20,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,18,Votantes habilitados fallecidos,1316,20,65,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,19,48,1241,228,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,20,22,13,4,0,0,22,0,0,0,-1--1--1,,1|(1241,132)|
+1,21,22,19,100,0,0,22,0,0,0,-1--1--1,,1|(1241,198)|
+11,22,48,1241,170,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,23,Nuevos votantes habilitados,1303,170,54,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,24,Tasa de personas que logran la mayoría de edad,1327,333,82,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,25,Tasa de fallecimiento de adultos,1294,-132,67,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,26,25,18,1,0,0,0,0,64,0,-1--1--1,,1|(1354,-66)|
+1,27,24,23,1,0,0,0,0,64,0,-1--1--1,,1|(1349,238)|
+1,28,13,4,1,0,0,0,0,64,0,-1--1--1,,1|(1125,60)|
+1,29,5,4,1,0,0,0,0,64,0,-1--1--1,,1|(1039,192)|
+1,30,13,18,1,0,0,0,0,64,0,-1--1--1,,1|(1308,63)|
+1,31,13,23,1,0,0,0,0,64,0,-1--1--1,,1|(1300,105)|
+10,32,Votantes ingenuos,791,85,57,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,33,4,32,1,0,0,0,0,64,0,-1--1--1,,1|(884,48)|
+1,34,6,32,1,0,0,0,0,64,0,-1--1--1,,1|(762,193)|
+1,35,32,3,1,0,0,0,0,64,0,-1--1--1,,1|(650,60)|
+10,36,Time,936,-124,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,37,36,4,1,0,0,0,0,64,0,-1--1--1,,1|(996,-52)|
+10,38,Time,1380,90,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,39,38,23,1,0,0,0,0,64,0,-1--1--1,,1|(1356,131)|
+1,40,38,18,1,0,0,0,0,64,0,-1--1--1,,1|(1364,60)|
+10,41,Constante 1 de regresión 1,1461,-111,57,22,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,42,Constante 2 de regresión 1,1521,21,53,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,43,41,18,1,0,0,0,3,64,0,192-192-192,|12||0-0-0,1|(1429,-39)|
+1,44,42,18,1,0,0,0,3,64,0,192-192-192,|12||0-0-0,1|(1430,32)|
+10,45,Constante 1 de regresión 2,1517,162,49,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,46,Constante 2 de regresión 2,1516,305,49,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,47,45,23,1,0,0,0,3,64,0,192-192-192,|12||0-0-0,1|(1413,159)|
+1,48,46,23,1,0,0,0,3,64,0,192-192-192,|12||0-0-0,1|(1446,226)|
+10,49,Publicaciones Electorales Verídicas,36,492,57,29,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,50,48,-217,487,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,51,53,49,4,0,0,22,0,0,0,-1--1--1,,1|(-68,489)|
+1,52,53,50,100,0,0,22,0,0,0,-1--1--1,,1|(-167,489)|
+11,53,48,-121,489,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,54,Nuevas publicaciones electorales verídicas,-121,516,69,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,55,48,271,490,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,56,58,55,4,0,0,22,0,0,0,-1--1--1,,1|(221,486)|
+1,57,58,49,100,0,0,22,0,0,0,-1--1--1,,1|(131,486)|
+11,58,48,176,486,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,59,Publicaciones electorales verídicas antiguas,176,522,64,28,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,60,Período Antiguedad,130,636,37,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,61,60,59,1,0,0,0,0,64,0,-1--1--1,,1|(188,600)|
+1,62,49,59,1,0,0,0,0,64,0,-1--1--1,,1|(137,439)|
+10,63,Tasa de Publicaciones Electorales Verídicas,-88,636,71,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,64,63,54,1,0,0,0,0,64,0,-1--1--1,,1|(-130,581)|
+1,65,49,54,1,0,0,0,0,64,0,-1--1--1,,1|(-70,439)|
+10,66,Razón de Publicaciones Electorales Falsas,401,339,75,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,67,49,66,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(147,343)|
+1,68,66,3,1,0,0,0,0,64,0,-1--1--1,,1|(437,239)|
+10,69,Publicaciones Electorales Falsas,595,543,57,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,70,Tasa de creación de Publicaciones Electorales Falsas,399,671,80,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,71,Tasa de eliminación de Publicaciones Electorales Falsas,816,663,80,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,72,70,69,1,0,0,0,0,64,0,-1--1--1,,1|(478,577)|
+1,73,71,69,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(738,582)|
+1,74,69,66,1,0,0,0,0,64,0,-1--1--1,,1|(547,428)|
+10,75,Costante 1 de regresión 3,808,492,45,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,76,Constante 2 de regresión 3,369,487,49,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,77,75,69,1,0,0,0,0,64,0,-1--1--1,,1|(724,465)|
+1,78,76,69,1,0,0,0,0,64,0,-1--1--1,,1|(443,522)|
+10,79,Time,585,703,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,80,79,69,1,0,0,0,0,64,0,-1--1--1,,1|(612,629)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Vista Educación
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,80,0
+10,1,Diferencia entre inversión real y planeada,238,197,78,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+10,2,"Discrepancia-",240,541,44,11,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+10,3,Porcentaje asignado a educación,476,687,65,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+10,4,Porcentaje base a Educación,688,543,57,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+10,5,Inversión Planeada para la Educación,728,351,60,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-255,|12||0-0-0,0,0,0,0,0,0
+10,6,Nivel Económico del País,590,59,55,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+10,7,"Productividad de Trabajadores-",902,19,55,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-255,|12||0-0-0,0,0,0,0,0,0
+1,8,7,6,1,0,0,0,0,64,0,-1--1--1,,1|(787,1)|
+1,9,4,3,1,0,0,0,0,64,0,-1--1--1,,1|(604,635)|
+1,10,4,5,1,0,0,0,0,64,0,-1--1--1,,1|(715,451)|
+1,11,5,1,1,0,0,0,0,64,0,-1--1--1,,1|(526,216)|
+1,12,5,2,1,0,0,0,0,64,0,-1--1--1,,1|(481,399)|
+1,13,1,2,1,0,0,0,0,64,0,-1--1--1,,1|(209,363)|
+1,14,2,3,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(313,625)|
+1,15,6,5,1,0,0,0,0,64,0,-1--1--1,,1|(682,169)|
+10,16,Nivel de calificación para trabajar,1078,90,64,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-255,|12||0-0-0,0,0,0,0,0,0
+10,17,Educación orientada al trabajo,984,477,65,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-255,|12||0-0-0,0,0,0,0,0,0
+10,18,Nivel de Educación,1075,596,34,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,19,Investigación en la educación,1280,680,58,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-255,|12||0-0-0,0,0,0,0,0,0
+10,20,Presupuesto mínimo para la calidad de Educación,1528,548,80,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-255,|12||0-0-0,0,0,0,0,0,0
+1,21,16,7,1,0,0,0,0,64,0,-1--1--1,,1|(1023,46)|
+1,22,18,17,1,0,0,0,0,64,0,-1--1--1,,1|(1017,540)|
+1,23,19,18,1,0,0,0,0,64,0,-1--1--1,,1|(1169,662)|
+1,24,20,19,1,0,0,0,0,64,0,-1--1--1,,1|(1454,630)|
+10,25,Presupuesto para Educación,913,772,63,29,3,131,0,4,0,0,0,0,-1--1--1,0-255-255,|12||0-0-0,0,0,0,0,0,0
+12,26,48,573,764,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,27,29,25,4,0,0,22,0,0,0,-1--1--1,,1|(765,762)|
+1,28,29,26,100,0,0,22,0,0,0,-1--1--1,,1|(625,762)|
+11,29,48,674,762,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,30,Presupuesto asignado para Educación,674,789,69,19,40,3,0,4,-1,0,0,0,-1--1--1,0-255-255,|12||0-0-0,0,0,0,0,0,0
+12,31,48,1218,762,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,32,34,31,4,0,0,22,0,0,0,-1--1--1,,1|(1155,760)|
+1,33,34,25,100,0,0,22,0,0,0,-1--1--1,,1|(1033,760)|
+11,34,48,1096,760,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,35,Inversión en Educación,1096,787,39,19,40,3,0,4,-1,0,0,0,-1--1--1,0-255-255,|12||0-0-0,0,0,0,0,0,0
+1,36,25,30,1,0,0,0,0,64,0,-1--1--1,,1|(809,834)|
+1,37,25,35,1,0,0,0,0,64,0,-1--1--1,,1|(995,836)|
+1,38,3,30,1,0,0,0,0,64,0,-1--1--1,,1|(532,771)|
+1,39,6,30,1,0,0,0,0,64,0,-1--1--1,,1|(871,469)|
+1,40,35,19,1,0,0,0,0,64,0,-1--1--1,,1|(1197,747)|
+10,41,Tasa anual de inversión,1293,790,44,19,8,3,0,4,0,0,0,0,-1--1--1,0-255-255,|12||0-0-0,0,0,0,0,0,0
+1,42,41,35,1,0,0,0,0,64,0,-1--1--1,,1|(1191,838)|
+10,43,Porcentaje de adultos sin educación básica,1513,-70,70,33,8,131,0,4,0,0,0,0,-1--1--1,0-255-255,|12||0-0-0,0,0,0,0,0,0
+10,44,Índice de Percepción de Corrupción,364,65,72,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,45,44,1,1,0,0,0,0,64,0,-1--1--1,,1|(294,121)|
+1,46,44,6,1,0,0,0,0,64,0,-1--1--1,,1|(478,34)|
+10,47,Sueldo ideal,1092,-33,43,11,8,3,0,4,0,0,0,0,-1--1--1,0-255-255,|12||0-0-0,0,0,0,0,0,0
+1,48,47,7,1,0,0,0,0,64,0,-1--1--1,,1|(999,-24)|
+10,49,Frecuencia de asignación de presupuesto,537,875,48,28,8,3,0,4,0,0,0,0,-1--1--1,0-255-255,|12||0-0-0,0,0,0,0,0,0
+1,50,49,30,1,0,0,0,0,64,0,-1--1--1,,1|(642,855)|
+10,51,Time,263,-50,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,52,51,1,1,0,0,0,0,64,0,-1--1--1,,1|(212,40)|
+1,53,51,6,1,0,0,0,0,64,0,-1--1--1,,1|(454,-54)|
+10,54,PEA con educación orientada al trabajo,935,309,64,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,55,17,54,1,0,0,0,0,64,0,-1--1--1,,1|(948,400)|
+1,56,54,7,1,0,0,0,0,64,0,-1--1--1,,1|(896,167)|
+10,57,Población Económicamente Activa,1288,148,77,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,58,Población Económicamente no Activa,1396,388,65,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,59,Población en Edad de Trabajar,1510,171,60,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,60,Población,1716,173,32,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,61,Tasa de actividad,1165,358,61,25,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,62,61,57,1,0,0,0,0,64,0,-1--1--1,,1|(1156,225)|
+1,63,61,58,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(1231,434)|
+1,64,60,59,1,0,0,0,0,64,0,-1--1--1,,1|(1621,115)|
+1,65,59,57,1,0,0,0,0,64,0,-1--1--1,,1|(1411,144)|
+1,66,59,58,1,0,0,0,0,64,0,-1--1--1,,1|(1497,289)|
+1,67,57,54,1,0,0,0,0,64,0,-1--1--1,,1|(1102,151)|
+1,68,57,6,1,0,0,0,0,64,0,-1--1--1,,1|(1098,-108)|
+10,69,Time,1312,272,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,70,69,59,1,0,0,0,0,64,0,-1--1--1,,1|(1419,254)|
+1,71,69,57,1,0,0,0,0,64,0,-1--1--1,,1|(1262,213)|
+1,72,69,58,1,0,0,0,0,64,0,-1--1--1,,1|(1283,317)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Vista Diversion
+$192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,90,0
+10,1,Publicaciones Fake News Generadas por diversion,693,132,78,27,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+10,2,Personas con Tiempo Libre,574,680,51,18,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||128-128-192,0,0,0,0,0,0
+10,3,Exposicion a Fake News,331,366,48,18,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+10,4,Seguidores de Fake News,580,435,60,23,3,131,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,5,7,14,4,0,0,22,0,0,0,-1--1--1,,1|(583,265)|
+1,6,7,4,100,0,0,22,0,0,0,-1--1--1,,1|(583,375)|
+11,7,1828,583,332,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,8,Nuevos creadores de Fake News,658,332,67,18,40,131,0,4,-1,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+12,9,48,583,586,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,10,12,4,4,0,0,22,0,0,0,-1--1--1,,1|(581,488)|
+1,11,12,9,100,0,0,22,0,0,0,-1--1--1,,1|(581,554)|
+11,12,48,581,524,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,13,Nuevos seguidores de FN,677,524,88,24,40,131,0,4,-1,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+10,14,Creador de Fake News,764,265,49,23,3,131,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+10,15,Reacciones por publicacion,1154,431,55,27,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+10,16,Impacto por publicacion,934,500,44,18,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,17,15,16,1,0,0,0,0,64,0,-1--1--1,,1|(1077,495)|
+10,18,Probabilidad de tener pasatiempo de crear FN,359,170,90,18,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,19,3,18,1,0,0,0,0,64,0,-1--1--1,,1|(310,262)|
+1,20,14,1,1,0,0,0,0,64,0,-1--1--1,,1|(694,210)|
+1,21,3,12,1,0,0,0,0,64,0,-1--1--1,,1|(428,469)|
+1,22,2,13,1,0,0,0,0,64,0,-1--1--1,,1|(664,618)|
+10,23,Tasa de nuevos seguidores,886,636,58,18,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,24,23,13,1,0,0,0,0,64,0,-1--1--1,,1|(761,612)|
+1,25,18,8,1,0,0,0,0,64,0,-1--1--1,,1|(531,141)|
+1,26,4,8,1,0,0,0,0,64,0,-1--1--1,,1|(538,339)|
+10,27,Umbral de reacciones,1185,664,52,23,8,131,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,28,27,16,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(1000,649)|
+10,29,Tasa de nuevos creadores,468,267,58,18,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,30,29,8,1,0,0,0,0,64,0,-1--1--1,,1|(567,237)|
+10,31,Atractividad de crear FN,934,404,51,18,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,32,31,8,1,0,0,0,0,64,0,-1--1--1,,1|(837,344)|
+10,33,Publicaciones por creador,885,80,61,18,8,3,0,4,0,0,0,0,-1--1--1,128-128-192,|12||0-0-0,0,0,0,0,0,0
+1,34,33,1,1,0,0,0,0,64,0,-1--1--1,,1|(774,51)|
+1,35,16,8,1,0,0,0,0,64,0,-1--1--1,,1|(765,433)|
+10,36,Población Económicamente no Activa,359,643,75,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,37,36,2,1,0,0,0,0,64,0,-1--1--1,,1|(524,608)|
+12,38,48,1140,262,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,39,41,38,4,0,0,22,0,0,0,-1--1--1,,1|(1052,264)|
+1,40,41,14,100,0,0,22,0,0,0,-1--1--1,,1|(887,264)|
+11,41,0,968,264,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,42,Creadores de FN por diversión informados,968,290,79,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,44,Tasa de transicion de creador creyente a informado,1233,199,84,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128,0,0,0,0,0,0
+1,45,44,42,1,0,0,0,0,64,0,-1--1--1,,1|(1059,205)|
+1,46,14,42,1,0,0,0,0,64,0,-1--1--1,,1|(851,198)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Vista Economica
+$192-192-192,0,Arial|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,70,0
+10,1,Personas con Tiempo Libre,911,69,56,18,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,2,Probabilidad de buscar formas de generar ganancia,525,470,86,27,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+10,3,Personas que crean FN para generar ganancias,949,203,74,27,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+10,4,Impulso de crear FN para generar ganancia,816,387,83,18,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,5,4,3,1,0,0,0,0,64,0,-1--1--1,,1|(828,309)|
+10,6,Porcentaje de ganancia por publicaciones,1035,564,52,27,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,7,6,4,1,0,0,0,0,64,0,-1--1--1,,1|(862,511)|
+10,8,Probabilidad de necesitar ingresos extra,280,294,68,27,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,9,8,2,1,0,0,0,3,64,0,0-0-255,|12||0-0-0,1|(334,405)|
+1,10,1,3,1,0,0,0,0,64,0,-1--1--1,,1|(904,128)|
+10,11,Fake News creadas con fines de lucro,1187,115,64,36,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,12,48,1196,510,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,13,15,11,4,0,0,22,0,0,0,-1--1--1,,1|(1197,227)|
+1,14,15,12,100,0,0,22,0,0,0,-1--1--1,,1|(1197,408)|
+11,15,48,1197,309,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,16,Nuevas FN creadas con fines de lucro,1278,309,73,18,40,3,0,4,-1,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,17,3,16,1,0,0,0,0,64,0,-1--1--1,,1|(1134,201)|
+10,18,Tasa de Publicación de FN,1238,556,68,18,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,19,18,16,1,0,0,0,0,64,0,-1--1--1,,1|(1306,450)|
+1,20,2,4,1,0,0,0,0,64,0,-1--1--1,,1|(687,449)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Eventos
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,70,0
+10,1,Impacto de Evento,727,413,69,28,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,2,48,455,408,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(612,408)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(510,408)|
+11,5,48,561,408,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,Nuevo Evento,561,427,46,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,7,48,1081,412,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,8,10,7,4,0,0,22,0,0,0,-1--1--1,,1|(1005,412)|
+1,9,10,1,100,0,0,22,0,0,0,-1--1--1,,1|(861,412)|
+11,10,48,933,412,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,11,Reduccion del Impacto,933,439,46,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,12,Impacto Minimo de Evento,889,277,53,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,13,Tasa de Reduccion,1038,579,34,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,14,12,10,1,0,0,0,0,64,0,-1--1--1,,1|(927,319)|
+1,15,13,10,1,0,0,0,0,64,0,-1--1--1,,1|(1012,479)|
+1,16,1,10,1,0,0,0,0,64,0,-1--1--1,,1|(851,378)|
+1,17,12,1,0,0,0,0,3,64,1,192-192-192,|12||0-0-0,1|(818,336)|
+10,18,Historial de Evento,613,689,60,11,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,19,Historial de Impacto,298,562,37,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,20,19,6,1,0,0,0,0,64,0,-1--1--1,,1|(443,516)|
+1,21,18,6,1,0,0,0,0,64,0,-1--1--1,,1|(617,556)|
+10,22,Time,467,633,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,23,22,6,0,0,0,0,0,64,0,-1--1--1,,1|(510,536)|
+10,24,Tasa de Creacion Contenido,716,172,57,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,25,1,24,1,0,0,0,0,64,0,-1--1--1,,1|(748,291)|
+1,26,12,24,0,0,0,0,0,64,0,-1--1--1,,1|(808,228)|
+///---\\\
+:L<%^E!@
+1:fn6.vdfx
+9:fn6
+23:0
+15:0,0,0,0,0,0
+19:60,0
+27:0,
+34:0,
+42:1
+72:0
+73:0
+4:Time
+5:Publicaciones de Fake News
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:0
+41:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
+24:2012
+25:3000
+26:3000
+75:
+43:

@@ -1,0 +1,1308 @@
+{UTF-8}
+Visualizaciones por publicación de Fact Checking=
+	Población con acceso a internet*Difusión de publicaciones de Fact Checking*Alcance de publicación de Fact Checking
+	~	Visualizaciones/(Publicaciones*Year)
+	~		|
+
+Alcance de las Fake News=
+	Publicaciones en una cuenta*Publicaciones de Fake News/(Población con acceso a internet\
+		*Interacciones por persona(Porcentaje de tiempo en redes sociales))*Tasa de interacciones por publicación
+	~	Publicaciones/Year
+	~		|
+
+Interacciones en Fake News=
+	Interacciones por persona(Porcentaje de tiempo en redes sociales)*(1-Habilidad de reconocimiento de Fake News de la población
+	)*Porcentaje de Publicaciones que son Fake News
+	~	Interacciones/Personas
+	~		|
+
+Nuevos fact checkers por fuente=
+	Fact Checkers por Fuente*Tasa de contratación de Fact Checkers*Período de contratación
+	~	Personas/(Year*Fuentes)
+	~		|
+
+Tasa de nuevos usuarios que generan Fake News=
+	0.25
+	~	1/Year
+	~		|
+
+Publicaciones por rumor=
+	1
+	~	Publicaciones/(Rumores*Fuentes)
+	~		|
+
+Período de reacción=
+	1
+	~	1/Year
+	~		|
+
+Nuevos usuarios que generan Fake News=
+	Tasa de nuevos usuarios que generan Fake News*Usuarios que generan Fake News
+	~	Personas/Year
+	~		|
+
+Usuarios que generan Fake News eliminados=
+	Reacción de censura*Usuarios que generan Fake News*Período de reacción
+	~	Personas/Year
+	~		|
+
+Período de contratación=
+	1
+	~	1/Year
+	~		|
+
+Publicaciones por fact checker=
+	Nuevos rumores*Publicaciones por rumor/Fact Checkers por Fuente
+	~	Publicaciones/(Year*Personas)
+	~		|
+
+Personas reportantes=
+	Porcentaje de personas reportantes*Población
+	~	Personas
+	~		|
+
+Interacciones totales=
+	Interacciones por persona(Porcentaje de tiempo en redes sociales)*Población con acceso a internet
+	~	Interacciones
+	~		|
+
+Interacciones por persona(
+	[(0,0)-(10,200)],(0,0),(0.03,156))
+	~	Interacciones/Personas
+	~		|
+
+Nueva población que cree en Fake News=
+	Susceptibles a creer Fake News*Interacciones a Fake News en promedio/Población
+	~	Personas/Year
+	~	Nuevas personas que se creen Fake News
+	|
+
+Algoritmos desfasados=
+	Algoritmos de identificación de Fake News*Porcentaje de algoritmos desfasados*Período de desfasamiento
+	~	Algoritmos/Year
+	~		|
+
+Publicaciones por cuenta=
+	1
+	~	Publicaciones/Personas
+	~		|
+
+Período de desfasamiento=
+	1
+	~	1/Year
+	~		|
+
+Publicaciones en una cuenta= INTEG (
+	-Alcance de las Fake News,
+		Población con acceso a internet*Publicaciones por cuenta)
+	~	Publicaciones
+	~		|
+
+Tasa de interacciones por publicación=
+	1
+	~	Interacciones/(Publicaciones*Year)
+	~	Cociente de interacciones creadas por publicación
+	|
+
+Nueva población que no se cree las Fake News=
+	Tasa de población que no se cree Fake News*Susceptibles a creer Fake News
+	~	Personas/Year
+	~	Nuevas personas que no se creen las Fake News
+	|
+
+Difusión de Fake News=
+	Difusión de noticias*Confianza en noticias de redes sociales
+	~	Dmnl
+	~		|
+
+Población que cree en Fake News= INTEG (
+	Nueva población que cree en Fake News,
+		1)
+	~	Personas
+	~	Personas que se creen las Fake News
+	|
+
+Nuevas Publicaciones de Fake news=
+	(Rumores*Publicaciones creadas por rumor)
+	~	Publicaciones/Year
+	~		|
+
+Tasa de población que no se cree Fake News=
+	0.14/18
+	~	1/(Year)
+	~	Porcentaje de personas que no se creen las Fake News
+	|
+
+Susceptibles a creer Fake News= INTEG (
+	-Nueva población que no se cree las Fake News-Nueva población que cree en Fake News\
+		,
+		Población con acceso a internet)
+	~	Personas
+	~	Personas susceptibles a creer Fake News
+	|
+
+Información en bases de datos=
+	Información por persona*Población con acceso a internet
+	~	PetaBytes
+	~		|
+
+Difusión de noticias=
+	Inmediatez de la información*Confianza en medios altenativos
+	~	Dmnl
+	~		|
+
+Confianza en medios altenativos=
+	0.3
+	~	1
+	~		|
+
+Porcentaje de Publicaciones que son Fake News=
+	Usuarios que generan Fake News/Población
+	~	1
+	~		|
+
+Población que no se cree las Fake News= INTEG (
+	Nueva población que no se cree las Fake News,
+		1)
+	~	Personas
+	~	Personas que no se creen las fake news
+	|
+
+Publicaciones creadas por rumor=
+	30
+	~	Publicaciones/(Rumores*Year)
+	~		|
+
+Publicaciones de Fake News= INTEG (
+	Alcance de las Fake News+Nuevas Publicaciones de Fake news-Publicaciones de Fake News olvidades\
+		,
+		1)
+	~	Publicaciones
+	~		|
+
+Defunciones=
+	Población*Tasa de Mortalidad(Time)/10
+	~	Personas/Year
+	~		|
+
+Tasa de Mortalidad(
+	[(0,0)-(3000,10)],(2000,0.0575),(2001,0.0565),(2002,0.0558),(2003,0.0552),(2004,0.0549\
+		),(2005,0.0546),(2006,0.0545),(2007,0.0545),(2008,0.0546),(2009,0.0548),(2010,0.055\
+		),(2011,0.0553),(2012,0.0555),(2013,0.0558),(2014,0.0561),(2015,0.0564),(2015,0.0564\
+		),(2016,0.0567),(2017,0.0571),(2018,0.0575),(2050,0.05))
+	~	1/Year
+	~		|
+
+Inmigrantes=
+	Población*Tasa de Inmigración(Time)
+	~	Personas/Year
+	~		|
+
+Intercepción confianza en redes sociales=
+	0.677
+	~	1
+	~		|
+
+Tasa de Emigración(
+	[(0,0)-(2050,10)],(2000,0.0269),(2005,0.035),(2010,0.0442),(2015,0.0445),(2017,0.0464\
+		),(2050,0.044))
+	~	1/Year
+	~		|
+
+Tasa de Inmigración(
+	[(0,0)-(2050,10)],(2000,0.026),(2005,0.028),(2010,0.036),(2015,0.05),(2017,0.029),(2050\
+		,0.033))
+	~	1/Year
+	~		|
+
+"Coeficiente conf. en medios tradicionales para conf. en RRSS"=
+	-0.7167
+	~	1
+	~		|
+
+Confianza en medios tradicionales(
+	[(0,0)-(3000,10)],(2000,0.65),(2017,0.55),(2018,0.53),(2019,0.29),(2020,0.47))
+	~	Dmnl
+	~		|
+
+Confianza en noticias de redes sociales=
+	Confianza en medios tradicionales(Time)*"Coeficiente conf. en medios tradicionales para conf. en RRSS"\
+		 + Intercepción confianza en redes sociales
+	~	Dmnl
+	~		|
+
+Población= INTEG (
+	Inmigrantes+Nacimientos-Defunciones-Emigrantes,
+		2.59836e+07)
+	~	Personas
+	~	Personas que se encuentran en el territorio peruano
+	|
+
+Población con acceso a internet=
+	Población*Acceso a internet(Time)
+	~	Personas
+	~	Personas que cuentan con acceso a internet
+	|
+
+Nacimientos=
+	Tasa de Nacimientos(Time)*Población/10
+	~	Personas/Year
+	~		|
+
+Tasa de Nacimientos(
+	[(2000,0)-(2040,20)],(2000,0.2407),(2001,0.2363),(2002,0.2321),(2003,0.2283),(2004,0.2249\
+		),(2005,0.2216),(2006,0.2182),(2007,0.2148),(2008,0.2111),(2009,0.2071),(2010,0.2031\
+		),(2011,0.1991),(2012,0.1954),(2013,0.192),(2014,0.1887),(2015,0.1856),(2016,0.1826\
+		),(2017,0.1797),(2018,0.1769))
+	~	1/Year
+	~		|
+
+Porcentaje de visualizaciones de Fake News=
+	Visualizaciones de Fake News/Visualizaciones totales
+	~	1
+	~	Cociente entre visualizaciones de Fake News y visualizaciones totales en \
+		redes sociales
+	|
+
+Emigrantes=
+	Población*Tasa de Emigración(Time)
+	~	Personas/Year
+	~		|
+
+Interacciones a Fake News en promedio=
+	1.4e+06
+	~	Personas/Year
+	~	Porcentaje de población que se cree Fake News
+	|
+
+Porcentajes de discusiones resueltas por año=
+	0.8
+	~	1/Year
+	~		|
+
+Porcentaje de hombres=
+	100-Porcentaje de mujeres(Time)
+	~	Dmnl
+	~		|
+
+Interacción promedio por publicación=
+	0.036
+	~	Interacciones/Visualizaciones
+	~		|
+
+Porcentaje de mujeres(
+	[(0,0)-(2100,60)],(1993,50.3),(2000,49.8),(2007,50.3),(2014,49.9),(2017,50.8),(2100,\
+		54.4))
+	~	Dmnl
+	~		|
+
+Verificación de noticias=
+	Miedo a discusiones(Discusiones)
+	~	Dmnl
+	~		|
+
+Carga global de trabajo de hombres(
+	[(2000,0)-(2100,70)],(2000,66.34),(2010,66.51),(2018,66.65),(2100,68.09))
+	~	Hour/Week
+	~	Horas de trabajo semanal para hombres
+	|
+
+Carga global de trabajo de mujeres(
+	[(200,0)-(2100,80)],(2000,75.51),(2010,75.53),(2019,75.54),(2100,75.64))
+	~	Hour/Week
+	~	Horas de trabajo semanal para mujeres
+	|
+
+Carga global total=
+	Carga global total de trabajo de hombres+Carga global total de trabajo de mujeres
+	~	Hour/Week
+	~		|
+
+Carga global total de trabajo de hombres=
+	(Carga global de trabajo de hombres(Time)*Porcentaje de hombres)/100
+	~	Hour/Week
+	~		|
+
+Carga global total de trabajo de mujeres=
+	(Carga global de trabajo de mujeres(Time)*Porcentaje de mujeres(Time))/100
+	~	Hour/Week
+	~		|
+
+Miedo a discusiones(
+	[(0,0)-(24,10)],(0,0),(12,1))
+	~	1
+	~		|
+
+Porcentaje de tiempo en redes sociales=
+	Porcentaje de tiempo de ocio en redes sociales(Time)*Porcentaje de tiempo de ocio inactivo
+	~	1
+	~		|
+
+Porcentaje de tiempo libre=
+	(100-Carga global total)/Horas semanales
+	~	1
+	~		|
+
+Discusiones= INTEG (
+	Nuevas discusiones-Discusiones resueltas,
+		1)
+	~	Discusiones
+	~		|
+
+Discusiones resueltas=
+	Discusiones*Porcentajes de discusiones resueltas por año
+	~	Discusiones/Year
+	~		|
+
+Probabilidad de generar una discusión a causa de Fake News=
+	0.3
+	~	Discusiones*Personas/(Interacciones*Year)
+	~		|
+
+Horas semanales=
+	168
+	~	Hour/Week
+	~		|
+
+Reacción de censura=
+	Porcentaje de Publicaciones que son Fake News*4
+	~	1
+	~		|
+
+Nuevas discusiones=
+	Interacciones en Fake News*Probabilidad de generar una discusión a causa de Fake News
+	~	Discusiones/Year
+	~		|
+
+Visualizaciones totales=
+	Interacciones totales/Interacción promedio por publicación
+	~	Visualizaciones
+	~	Visualizaciones totales en redes sociales
+	|
+
+Porcentaje de tiempo de ocio inactivo=
+	Porcentaje de tiempo libre*(1-Porcentaje de tiempo libre dedicado a ocio activo(Time\
+		))
+	~	1
+	~		|
+
+Habilidad de reconocimiento de Fake News de la población=
+	0.28*Verificación de noticias
+	~	1
+	~		|
+
+Usuarios que generan Fake News= INTEG (
+	Nuevos usuarios que generan Fake News-Usuarios que generan Fake News eliminados,
+		1)
+	~	Personas
+	~		|
+
+Visualizaciones por publicación de Fake News=
+	Alcance de publicación de Fake News*Difusión de Fake News*Población con acceso a internet\
+		*Acceso a internet(Time)
+	~	Visualizaciones/(Publicaciones*Year)
+	~		|
+
+Porcentaje de tiempo libre dedicado a ocio activo(
+	[(2000,0)-(2100,10)],(2000,0.31),(2015,0.28))
+	~	Dmnl
+	~		|
+
+Nivel de censura=
+	(70*(IF THEN ELSE(Algoritmos de identificación de Fake News/Algoritmos tolerados>1,\
+		 1, Algoritmos de identificación de Fake News
+	/Algoritmos tolerados))+30*Presión de población)/100
+	~	Dmnl
+	~		|
+
+Presión de población=
+	Presión por reportes(Reportes de Fake News)
+	~	Dmnl
+	~		|
+
+Tiempo de recuerdo de visualización de Fake News=
+	10/365
+	~	1/Year
+	~		|
+
+Tiempo promedio de olvido de visualización de Fake News=
+	1-Tiempo de recuerdo de visualización de Fake News
+	~	1/Year
+	~		|
+
+Período para atender reportes=
+	1
+	~	1/Year
+	~		|
+
+Reportes por publicación=
+	Personas reportantes*Reportes por persona
+	~	Reportes/(Publicaciones*Year)
+	~		|
+
+Insatisfacción de población sobre Fake News=
+	Difusión de Fake News
+	~	Dmnl
+	~		|
+
+Tasa de reportes atendidos=
+	Nivel de censura*Período para atender reportes
+	~	1/Year
+	~		|
+
+Tasa de contratación de Fact Checkers=
+	IF THEN ELSE(Publicaciones por fact checker>Límite de publicaciones por fact checker\
+		, INTEGER(Publicaciones por fact checker/Límite de publicaciones por fact checker)\
+		, 0)
+	~	1
+	~		|
+
+Reportes de Fake News atendidos=
+	Tasa de reportes atendidos*Reportes de Fake News
+	~	Reportes/Year
+	~		|
+
+Reportes por persona=
+	1
+	~	Reportes/(Publicaciones*Personas*Year)
+	~		|
+
+Límite de publicaciones por fact checker=
+	25
+	~	Publicaciones/(Year*Personas)
+	~		|
+
+Nuevos reportes de Fake News=
+	Publicaciones de Fake News*Reportes por publicación
+	~	Reportes/Year
+	~		|
+
+Porcentaje de personas reportantes=
+	Insatisfacción de población sobre Fake News
+	~	Dmnl
+	~		|
+
+Reportes de Fake News= INTEG (
+	Nuevos reportes de Fake News-Reportes de Fake News atendidos,
+		0)
+	~	Reportes
+	~		|
+
+Presión por reportes(
+	[(0,0)-(-2.14748e+09,10)],(0,0),(1e+06,0.3),(1e+07,0.5),(1e+11,1))
+	~	Dmnl
+	~		|
+
+Visualizaciones de Fake News olvidadas=
+	(Tiempo promedio de olvido de visualización de Fake News*Visualizaciones de Fake News\
+		)+Visualizaciones olvidadas por publicaciones de Fact Checking
+	~	Visualizaciones/Year
+	~		|
+
+Visualizaciones olvidadas por publicaciones de Fact Checking=
+	IF THEN ELSE(Nuevas visualizaciones de Fake News<Visualizaciones de publicaciones de Fact Checking\
+		, Nuevas visualizaciones de Fake News
+	, Visualizaciones de publicaciones de Fact Checking)
+	~	Visualizaciones/Year
+	~		|
+
+Percepción de libertad de expresión=
+	IF THEN ELSE(Nivel de censura>Nivel de censura tolerado, 0.1, (1-Nivel de censura/Nivel de censura tolerado\
+		))
+	~	Dmnl
+	~		|
+
+Porcentaje de algoritmos desfasados=
+	0.2*(1-Percepción de libertad de expresión)
+	~	Dmnl
+	~		|
+
+Algoritmos de identificación de Fake News= INTEG (
+	Nuevos algoritmos-Algoritmos desfasados,
+		0)
+	~	Algoritmos
+	~		|
+
+Algoritmos tolerados=
+	10
+	~	Algoritmos
+	~		|
+
+Inversión en Investigación de las empresas=
+	1e+08
+	~	um/Year
+	~		|
+
+Nuevos algoritmos=
+	IF THEN ELSE((Inversión en Investigación sobre Fake News>Umbral de creación de algoritmo\
+		):AND:(Información en bases de datos>Umbral de información en base de datos
+	), 1, 0)
+	~	Algoritmos/Year
+	~		|
+
+Porcentaje de Investigación en Fake News=
+	Presión de empresas
+	~	Dmnl
+	~		|
+
+Nivel de censura tolerado=
+	0.5
+	~	Dmnl
+	~		|
+
+Información por persona=
+	0.001
+	~	PetaBytes/Personas
+	~		|
+
+Umbral de información en base de datos=
+	20000
+	~	PetaBytes
+	~		|
+
+Inmediatez de la información=
+	0.98*Acceso a internet(Time)
+	~	Dmnl
+	~		|
+
+Inversión en Investigación sobre Fake News=
+	Inversión en Investigación de las empresas*Porcentaje de Investigación en Fake News
+	~	um/Year
+	~		|
+
+Umbral de creación de algoritmo=
+	1e+07
+	~	um/Year
+	~		|
+
+Fact Checkers por Fuente= INTEG (
+	Nuevos fact checkers por fuente-Fact checkers despedidos,
+		1)
+	~	Personas/Fuentes
+	~		|
+
+Tasa de despido de Fact Checkers=
+	0.2
+	~	1/Year
+	~		|
+
+Fact checkers despedidos=
+	Fact Checkers por Fuente*Tasa de despido de Fact Checkers
+	~	Personas/(Year*Fuentes)
+	~		|
+
+Publicaciones por fuente=
+	Fact Checkers por Fuente*Publicaciones por fact checker
+	~	Publicaciones/(Fuentes*Year)
+	~		|
+
+Alcance de publicación de Fact Checking=
+	1/300000
+	~	Visualizaciones/(Personas*Year*Publicaciones)
+	~		|
+
+Alcance de publicación de Fake News=
+	0.036
+	~	Visualizaciones/(Publicaciones*Personas*Year)
+	~		|
+
+Período de olvido de una publicación de Fact Checking=
+	5/365
+	~	1/Year
+	~		|
+
+Publicaciones de Fact Checking= INTEG (
+	Nuevas publicaciones de Fact Checking-Publicaciones de Fact Checking olvidadas,
+		0)
+	~	Publicaciones
+	~		|
+
+Difusión de publicaciones de Fact Checking=
+	Difusión de Noticias Verdaderas
+	~	Dmnl
+	~		|
+
+Publicaciones de Fact Checking olvidadas=
+	Publicaciones de Fact Checking*Período de olvido de una publicación de Fact Checking
+	~	Publicaciones/Year
+	~		|
+
+Fuentes de Fact Checking(
+	[(2000,0)-(2100,30)],(2000,0),(2014,1),(2019,2),(2020,3),(2100,10))
+	~	Fuentes
+	~		|
+
+Visualizaciones de publicaciones de Fact Checking=
+	Publicaciones de Fact Checking*Visualizaciones por publicación de Fact Checking
+	~	Visualizaciones/Year
+	~		|
+
+Nuevas publicaciones de Fact Checking=
+	Fuentes de Fact Checking(Time)*Publicaciones por fuente
+	~	Publicaciones/Year
+	~		|
+
+Porcentaje de Fake News que infringen normas de redes sociales=
+	Nivel de censura*Período de eliminación
+	~	1/Year
+	~		|
+
+Presión de empresas=
+	IF THEN ELSE(Fake News difamando empresas/Tolerancia de empresas a Fake News < 1, Fake News difamando empresas\
+		/Tolerancia de empresas a Fake News, 1)
+	~	Dmnl
+	~		|
+
+Fake News difamando empresas=
+	Publicaciones de Fake News*Porcentaje de publicaciones de Fake News difamando empresas
+	~	Publicaciones
+	~		|
+
+Período de eliminación=
+	1
+	~	1/Year
+	~		|
+
+Publicaciones de Fake News olvidades=
+	Publicaciones de Fake News*(Porcentaje de Fake News que infringen normas de redes sociales\
+		+Tiempo promedio de atención a publicación de Fake News)
+	~	Publicaciones/Year
+	~		|
+
+Tolerancia de empresas a Fake News=
+	1e+06
+	~	Publicaciones
+	~		|
+
+Porcentaje de publicaciones de Fake News difamando empresas=
+	0.05
+	~	Dmnl
+	~		|
+
+Acceso a internet(
+	[(2000,0)-(2100,60)],(2006,0.2602),(2007,0.28),(2008,0.293),(2009,0.318),(2010,0.32)\
+		,(2011,0.32),(2012,0.341),(2013,0.384),(2014,0.41),(2015,0.407),(2016,0.46),(2017,0.526\
+		),(2018,0.51),(2019,0.54),(2020,0.603),(2050,1))
+	~	Dmnl
+	~		|
+
+Difusión de Noticias Verdaderas=
+	Difusión de noticias
+	~	Dmnl
+	~		|
+
+Nuevas visualizaciones de Fake News=
+	Publicaciones de Fake News*Visualizaciones por publicación de Fake News
+	~	Visualizaciones/Year
+	~		|
+
+Nuevos rumores=
+	Rumores creados por temas polémicos*Temas polémicos
+	~	Rumores/Year
+	~		|
+
+Nuevos temas polémicos=
+	RANDOM UNIFORM(18, 22 , 17 )
+	~	Temas/Year
+	~		|
+
+Porcentaje de tiempo de ocio en redes sociales(
+	[(2000,0)-(2100,0.3)],(2000,0.001),(2006.12,0.0184211),(2013.46,0.0434211),(2018.96,\
+		0.0776316),(2022.63,0.110526),(2028.44,0.148684),(2037,0.181579),(2045.87,0.205263)\
+		,(2059.63,0.222368),(2100,0.22))
+	~	Dmnl
+	~		|
+
+Rumores= INTEG (
+	Nuevos rumores-Rumores olvidados,
+		20)
+	~	Rumores
+	~		|
+
+Rumores creados por temas polémicos=
+	5
+	~	Rumores/(Temas*Year)
+	~		|
+
+Rumores olvidados=
+	Rumores*Tiempo promedio de atención a rumores
+	~	Rumores/Year
+	~		|
+
+Temas polémicos= INTEG (
+	Nuevos temas polémicos-Temas polémicos olvidados,
+		12)
+	~	Temas
+	~		|
+
+Temas polémicos olvidados=
+	Temas polémicos*Tiempo promedio de atención a temas polémicos
+	~	Temas/Year
+	~		|
+
+Tiempo promedio de atención a publicación de Fake News=
+	0.9
+	~	1/Year
+	~		|
+
+Tiempo promedio de atención a rumores=
+	0.95
+	~	1/Year
+	~		|
+
+Tiempo promedio de atención a temas polémicos=
+	0.95
+	~	1/Year
+	~		|
+
+Visualizaciones de Fake News= INTEG (
+	Nuevas visualizaciones de Fake News-Visualizaciones de Fake News olvidadas,
+		100000)
+	~	Visualizaciones
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 2100
+	~	Year
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 2005
+	~	Year
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Year [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Year [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Principal
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,80,0
+12,1,0,333,-258,92,19,0,7,0,8,-1,0,0,0,-1--1--1,0-0-0,|24||0-0-0,0,0,0,0,0,0
+FAKE NEWS
+10,2,Acceso a internet,481,-107,38,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,3,Inmediatez de la información,745,-172,52,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,4,2,3,1,0,0,0,0,64,0,-1--1--1,,1|(590,-167)|
+10,5,Confianza en noticias de redes sociales,528,139,67,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,6,Porcentaje de tiempo en redes sociales,492,424,60,30,8,131,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,7,Porcentaje de tiempo de ocio en redes sociales,375,601,78,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,8,7,6,1,0,0,0,0,64,0,-1--1--1,,1|(465,548)|
+10,9,Difusión de noticias,984,-97,36,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,10,3,9,1,0,0,0,0,64,0,-1--1--1,,1|(866,-162)|
+10,11,Difusión de Fake News,1038,75,55,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+10,12,Difusión de Noticias Verdaderas,1227,-93,65,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,13,9,12,1,0,0,0,0,64,0,-1--1--1,,1|(1093,-146)|
+1,14,9,11,1,0,0,0,0,64,0,-1--1--1,,1|(972,-5)|
+10,15,Confianza en medios tradicionales,777,244,64,27,8,131,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,16,15,5,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(702,125)|
+10,17,Temas polémicos,1731,-195,60,26,3,131,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,18,Rumores,1734,-64,59,27,3,131,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,19,Publicaciones de Fake News,1695,168,59,27,3,131,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+12,20,48,1963,-195,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,21,23,17,4,0,0,22,0,0,0,-1--1--1,,1|(1829,-197)|
+1,22,23,20,100,0,0,22,0,0,0,-1--1--1,,1|(1916,-197)|
+11,23,48,1873,-197,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,24,Nuevos temas polémicos,1873,-170,46,19,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+12,25,48,1455,-195,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,26,28,25,4,0,0,22,0,0,0,-1--1--1,,1|(1517,-195)|
+1,27,28,17,100,0,0,22,0,0,0,-1--1--1,,1|(1626,-195)|
+11,28,48,1576,-195,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,29,Temas polémicos olvidados,1576,-168,56,19,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+12,30,48,1974,-59,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,31,33,18,4,0,0,22,0,0,0,-1--1--1,,1|(1837,-56)|
+1,32,33,30,100,0,0,22,0,0,0,-1--1--1,,1|(1928,-56)|
+11,33,48,1887,-56,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,34,Nuevos rumores,1887,-37,52,11,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+12,35,48,1457,-64,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,36,38,35,4,0,0,22,0,0,0,-1--1--1,,1|(1521,-62)|
+1,37,38,18,100,0,0,22,0,0,0,-1--1--1,,1|(1631,-62)|
+11,38,48,1582,-62,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,39,Rumores olvidados,1582,-35,31,19,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+12,40,48,1416,168,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,41,43,40,4,0,0,22,0,0,0,-1--1--1,,1|(1480,169)|
+1,42,43,19,100,0,0,22,0,0,0,-1--1--1,,1|(1591,169)|
+11,43,48,1540,169,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,44,Publicaciones de Fake News olvidades,1540,196,72,19,40,3,0,4,-1,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,45,17,34,1,0,0,0,0,64,0,-1--1--1,,1|(1856,-125)|
+1,46,17,29,1,0,0,0,0,64,0,-1--1--1,,1|(1643,-257)|
+1,47,18,39,1,0,0,0,0,64,0,-1--1--1,,1|(1639,-118)|
+1,48,19,44,1,0,0,0,0,64,0,-1--1--1,,1|(1596,114)|
+10,49,Rumores creados por temas polémicos,2025,-121,69,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,50,49,34,1,0,0,0,0,64,0,-1--1--1,,1|(1922,-107)|
+10,51,Tiempo promedio de atención a temas polémicos,1443,-268,67,28,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,52,Tiempo promedio de atención a rumores,1442,-124,67,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,53,Tiempo promedio de atención a publicación de Fake News,1449,60,80,28,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,54,51,29,1,0,0,0,0,64,0,-1--1--1,,1|(1543,-246)|
+1,55,52,39,1,0,0,0,0,64,0,-1--1--1,,1|(1548,-107)|
+1,56,53,44,1,0,0,0,0,64,0,-1--1--1,,1|(1532,132)|
+10,57,Visualizaciones de Fake News,1785,550,63,25,3,131,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+12,58,48,1506,558,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,59,61,57,4,0,0,22,0,0,0,-1--1--1,,1|(1672,562)|
+1,60,61,58,100,0,0,22,0,0,0,-1--1--1,,1|(1563,562)|
+11,61,48,1616,562,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,62,Nuevas visualizaciones de Fake News,1616,589,72,19,40,3,0,4,-1,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+12,63,48,2030,559,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,64,66,63,4,0,0,22,0,0,0,-1--1--1,,1|(1979,557)|
+1,65,66,57,100,0,0,22,0,0,0,-1--1--1,,1|(1887,557)|
+11,66,48,1933,557,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,67,Visualizaciones de Fake News olvidadas,1933,584,70,19,40,3,0,4,-1,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,68,19,62,1,0,0,0,0,64,0,-1--1--1,,1|(1546,356)|
+1,69,57,67,1,0,0,0,0,64,0,-1--1--1,,1|(1862,500)|
+10,70,Visualizaciones por publicación de Fake News,1016,328,65,28,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,71,11,70,1,0,0,0,0,64,0,-1--1--1,,1|(1080,198)|
+1,72,70,62,1,0,0,0,0,64,0,-1--1--1,,1|(1261,470)|
+10,73,Tiempo promedio de olvido de visualización de Fake News,2134,505,89,28,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,74,73,67,1,0,0,0,0,64,0,-1--1--1,,1|(1990,515)|
+10,75,Porcentaje de Fake News que infringen normas de redes sociales,1395,294,95,28,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,76,75,44,1,0,0,0,0,64,0,-1--1--1,,1|(1531,274)|
+10,77,Período de eliminación,1251,363,36,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,78,77,75,1,0,0,0,0,64,0,-1--1--1,,1|(1334,361)|
+1,79,2,70,1,0,0,0,0,64,0,-1--1--1,,1|(829,6)|
+10,80,Time,1180,542,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,81,80,70,1,0,0,0,0,64,0,-1--1--1,,1|(1080,458)|
+10,82,Nivel de censura,1283,191,33,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,83,82,75,1,0,0,0,0,64,0,-1--1--1,,1|(1318,251)|
+10,84,Alcance de publicación de Fake News,831,545,74,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,85,84,70,1,0,0,0,0,64,0,-1--1--1,,1|(855,418)|
+10,86,Time,357,103,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,87,Time,721,-265,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,88,87,3,1,0,0,0,0,64,0,-1--1--1,,1|(749,-211)|
+10,89,Visualizaciones olvidadas por publicaciones de Fact Checking,2053,724,85,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,90,89,67,1,0,0,0,0,64,0,-1--1--1,,1|(1953,669)|
+10,91,Tiempo de recuerdo de visualización de Fake News,2169,625,75,28,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,92,91,73,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(2064,581)|
+10,93,Porcentaje de tiempo libre dedicado a ocio activo,-37,462,68,28,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,94,Porcentaje de tiempo libre,-36,365,49,19,8,2,0,7,-1,0,0,0,128-128-128,192-255-192,|12||128-128-128,0,0,0,0,0,0
+10,95,Porcentaje de tiempo de ocio inactivo,215,422,68,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,96,94,95,1,0,0,0,0,64,0,-1--1--1,,1|(83,338)|
+1,97,93,95,1,0,0,0,0,64,0,-1--1--1,,1|(84,498)|
+1,98,95,6,1,0,0,0,0,64,0,-1--1--1,,1|(346,351)|
+10,99,Time,347,493,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,100,99,95,1,0,0,0,0,64,0,-1--1--1,,1|(266,474)|
+1,101,99,6,1,0,0,0,0,64,0,-1--1--1,,1|(416,484)|
+10,102,Interacciones por persona,302,276,56,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,103,Interacciones totales,205,161,43,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,104,102,103,1,0,0,0,0,64,0,-1--1--1,,1|(231,225)|
+10,105,Población con acceso a internet,213,5,54,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,106,2,105,1,0,0,0,0,64,0,-1--1--1,,1|(327,-83)|
+1,107,86,105,1,0,0,0,0,64,0,-1--1--1,,1|(339,50)|
+1,108,105,103,1,0,0,0,0,64,0,-1--1--1,,1|(185,75)|
+10,109,Población con acceso a internet,998,561,58,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,110,109,70,1,0,0,0,0,64,0,-1--1--1,,1|(963,445)|
+10,111,Interacción promedio por publicación,-16,-103,68,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,112,Visualizaciones totales,15,56,48,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,113,103,112,1,0,0,0,0,64,0,-1--1--1,,1|(77,133)|
+1,114,111,112,1,0,0,0,0,64,0,-1--1--1,,1|(-13,-35)|
+10,115,Susceptibles a creer Fake News,689,842,56,27,3,131,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+10,116,Población que cree en Fake News,1030,842,62,30,3,131,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,117,119,116,4,0,0,22,0,0,0,-1--1--1,,1|(915,847)|
+1,118,119,115,100,0,0,22,0,0,0,-1--1--1,,1|(797,847)|
+11,119,926,856,847,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,120,Nueva población que cree en Fake News,856,876,70,21,40,131,0,4,-1,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+10,121,Interacciones a Fake News en promedio,861,1024,81,26,8,131,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,122,121,119,1,0,0,0,0,64,0,-1--1--1,,1|(873,935)|
+1,123,115,120,1,0,0,0,0,64,0,-1--1--1,,1|(768,798)|
+10,124,Población con acceso a internet,415,795,58,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,125,124,115,1,0,0,0,0,64,1,-1--1--1,,1|(562,762)|
+10,126,"Coeficiente conf. en medios tradicionales para conf. en RRSS",507,30,88,28,8,3,0,4,0,0,0,0,-1--1--1,128-192-255,|12||0-0-0,0,0,0,0,0,0
+1,127,126,5,1,0,0,0,0,64,0,-1--1--1,,1|(448,85)|
+1,128,86,5,1,0,0,0,0,64,0,-1--1--1,,1|(401,164)|
+10,129,Intercepción confianza en redes sociales,584,227,71,19,8,3,0,4,0,0,0,0,-1--1--1,128-192-255,|12||0-0-0,0,0,0,0,0,0
+1,130,129,5,1,0,0,0,0,64,0,-1--1--1,,1|(612,172)|
+10,131,Porcentaje de visualizaciones de Fake News,1613,721,74,28,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,132,57,131,1,0,0,0,0,64,0,-1--1--1,,1|(1734,662)|
+10,133,Visualizaciones totales,1345,725,53,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,134,133,131,1,0,0,0,0,64,0,-1--1--1,,1|(1470,773)|
+10,135,Población,251,-194,41,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,136,135,105,1,0,0,0,0,64,0,-1--1--1,,1|(187,-102)|
+10,137,Población que no se cree las Fake News,365,1037,63,27,3,131,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,138,140,137,4,0,0,22,0,0,0,-1--1--1,,1|(363,971)|
+1,139,140,115,100,0,0,22,0,0,0,-1--1--1,,1|(363,842)|
+11,140,1322,363,927,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,141,Nueva población que no se cree las Fake News,435,927,64,25,40,131,0,4,-1,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,142,115,141,1,0,0,0,0,64,0,-1--1--1,,1|(568,915)|
+10,143,Publicaciones en una cuenta,1941,314,64,33,3,131,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,144,Población con acceso a internet,2121,395,58,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,145,144,143,1,0,0,0,0,64,1,-1--1--1,,1|(2014,377)|
+1,146,148,19,4,0,0,22,0,0,0,-1--1--1,,1|(1695,276)|
+1,147,148,143,100,0,0,22,0,0,0,-1--1--1,,1|(1941,366)|
+11,148,266,1695,366,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,149,Alcance de las Fake News,1695,393,47,19,40,3,0,4,-1,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,150,143,149,1,0,0,0,0,64,0,-1--1--1,,1|(1824,374)|
+1,151,19,149,1,0,0,0,0,64,0,-1--1--1,,1|(1642,275)|
+1,152,144,149,1,0,0,0,0,64,0,-1--1--1,,1|(1910,423)|
+12,153,48,1892,176,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,154,156,19,4,0,0,22,0,0,0,-1--1--1,,1|(1788,173)|
+1,155,156,153,100,0,0,22,0,0,0,-1--1--1,,1|(1858,173)|
+11,156,48,1829,173,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,157,Nuevas Publicaciones de Fake news,1829,200,70,19,40,3,0,4,-1,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,158,18,157,1,0,0,0,0,64,0,-1--1--1,,1|(1820,42)|
+10,159,Publicaciones creadas por rumor,2091,237,59,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,160,159,157,1,0,0,0,0,64,0,-1--1--1,,1|(1957,227)|
+10,161,Interacciones por persona,1650,514,60,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,162,161,149,1,0,0,0,0,64,0,-1--1--1,,1|(1611,447)|
+10,163,Tasa de población que no se cree Fake News,191,912,72,19,8,3,0,4,0,0,0,0,-1--1--1,255-128-192,|12||0-0-0,0,0,0,0,0,0
+1,164,163,141,1,0,0,0,0,64,0,-1--1--1,,1|(307,881)|
+10,165,Confianza en medios altenativos,1106,-218,66,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,166,165,9,1,0,0,0,0,64,0,-1--1--1,,1|(1028,-168)|
+10,167,Confianza en noticias de redes sociales,1251,57,72,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,168,167,11,1,0,0,0,0,64,0,-1--1--1,,1|(1131,25)|
+10,169,Población,940,737,41,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,170,169,120,1,0,0,0,0,64,0,-1--1--1,,1|(879,785)|
+10,171,Publicaciones por cuenta,2128,331,57,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,172,171,143,1,0,0,0,0,64,1,-1--1--1,,1|(2060,301)|
+10,173,Tasa de interacciones por publicación,1933,460,76,30,8,131,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,174,173,149,1,0,0,0,0,64,0,-1--1--1,,1|(1794,452)|
+1,175,6,103,1,0,0,0,0,64,0,-1--1--1,,1|(420,242)|
+10,176,Porcentaje de tiempo en redes sociales,1441,403,73,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128,0,0,0,0,0,0
+1,177,176,149,1,0,0,0,0,64,0,-1--1--1,,1|(1572,357)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Censura
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,80,0
+12,1,0,337,386,53,19,0,7,0,8,-1,0,0,0,-1--1--1,0-0-0,|24||0-0-0,0,0,0,0,0,0
+Censura
+10,2,Nivel de censura,1031,569,56,11,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,3,Presión de empresas,302,870,34,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,4,Presión de población,1063,444,34,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,5,4,2,1,0,0,0,0,64,0,-1--1--1,,1|(1071,500)|
+10,6,Fake News difamando empresas,175,998,66,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,7,Insatisfacción de población sobre Fake News,1315,328,70,28,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,8,6,3,1,0,0,0,0,64,0,-1--1--1,,1|(204,926)|
+10,9,Publicaciones de Fake News,105,1131,58,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,10,Porcentaje de publicaciones de Fake News difamando empresas,324,1139,89,28,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,11,10,6,1,0,0,0,0,64,0,-1--1--1,,1|(293,1049)|
+1,12,9,6,1,0,0,0,0,64,0,-1--1--1,,1|(106,1068)|
+10,13,Tolerancia de empresas a Fake News,451,1001,75,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,14,13,3,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(415,934)|
+10,15,Inversión en Investigación sobre Fake News,452,665,61,28,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,16,Información en bases de datos,791,955,48,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,17,Información por persona,638,994,52,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,18,17,16,1,0,0,0,0,64,0,-1--1--1,,1|(702,939)|
+10,19,Algoritmos de identificación de Fake News,745,792,74,30,3,131,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+12,20,48,520,790,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,21,23,19,4,0,0,22,0,0,0,-1--1--1,,1|(634,791)|
+1,22,23,20,100,0,0,22,0,0,0,-1--1--1,,1|(557,791)|
+11,23,48,591,791,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,24,Nuevos algoritmos,591,810,59,11,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+12,25,48,988,792,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,26,28,25,4,0,0,22,0,0,0,-1--1--1,,1|(936,792)|
+1,27,28,19,100,0,0,22,0,0,0,-1--1--1,,1|(850,792)|
+11,28,48,888,792,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,29,Algoritmos desfasados,888,819,36,19,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,30,Inversión en Investigación de las empresas,240,607,62,28,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,31,Porcentaje de Investigación en Fake News,214,758,69,28,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,32,30,15,1,0,0,0,0,64,0,-1--1--1,,1|(367,606)|
+1,33,31,15,1,0,0,0,0,64,0,-1--1--1,,1|(305,665)|
+1,34,3,31,1,0,0,0,0,64,0,-1--1--1,,1|(216,831)|
+10,35,Umbral de creación de algoritmo,633,653,63,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,36,15,24,1,0,0,0,0,64,0,-1--1--1,,1|(564,723)|
+1,37,35,24,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(664,728)|
+1,38,16,24,1,0,0,0,0,64,0,-1--1--1,,1|(722,867)|
+10,39,Umbral de información en base de datos,519,911,73,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,40,39,24,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(535,859)|
+1,41,19,29,1,0,0,0,0,64,0,-1--1--1,,1|(822,739)|
+10,42,Porcentaje de algoritmos desfasados,994,929,70,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,43,42,29,1,0,0,0,0,64,0,-1--1--1,,1|(880,887)|
+1,44,19,2,1,0,0,0,0,64,0,-1--1--1,,1|(831,638)|
+10,45,Algoritmos tolerados,789,543,35,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,46,45,2,1,0,0,0,0,64,0,-1--1--1,,1|(895,520)|
+10,47,Percepción de libertad de expresión,1158,722,67,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,48,2,47,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(1048,694)|
+1,49,47,42,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(1136,882)|
+10,50,Nivel de censura tolerado,1259,990,54,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,51,50,47,1,0,0,0,0,64,0,-1--1--1,,1|(1254,825)|
+12,52,0,913,701,20,20,4,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B
+10,53,Reportes de Fake News,1141,168,40,20,3,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+12,54,48,1328,168,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,55,57,53,4,0,0,22,0,0,0,-1--1--1,,1|(1216,167)|
+1,56,57,54,100,0,0,22,0,0,0,-1--1--1,,1|(1291,167)|
+11,57,48,1258,167,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,58,Nuevos reportes de Fake News,1258,194,64,19,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+12,59,48,922,167,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,60,62,59,4,0,0,22,0,0,0,-1--1--1,,1|(975,167)|
+1,61,62,53,100,0,0,22,0,0,0,-1--1--1,,1|(1066,167)|
+11,62,48,1025,167,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,63,Reportes de Fake News atendidos,1025,194,58,19,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,64,Publicaciones de Fake News,1424,94,58,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,65,64,58,1,0,0,0,0,64,0,-1--1--1,,1|(1340,175)|
+10,66,Reportes por publicación,1438,236,43,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,67,66,58,1,0,0,0,0,64,0,-1--1--1,,1|(1335,244)|
+1,68,53,63,1,0,0,0,0,64,0,-1--1--1,,1|(1078,120)|
+1,69,53,4,1,0,0,0,0,64,0,-1--1--1,,1|(1044,280)|
+10,70,Personas reportantes,1667,232,36,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,71,Porcentaje de personas reportantes,1511,375,67,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,72,71,70,1,0,0,0,0,64,0,-1--1--1,,1|(1652,337)|
+1,73,7,71,1,0,0,0,0,64,0,-1--1--1,,1|(1386,378)|
+10,74,Reportes por persona,1596,138,43,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,75,74,66,1,0,0,0,0,64,0,-1--1--1,,1|(1484,156)|
+1,76,70,66,1,0,0,0,0,64,0,-1--1--1,,1|(1553,206)|
+10,77,Difusión de Fake News,1156,304,59,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,78,77,7,1,0,0,0,0,64,0,-1--1--1,,1|(1252,277)|
+10,79,Nivel de censura,726,98,32,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,80,Tasa de reportes atendidos,908,76,54,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,81,Período para atender reportes,811,166,53,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,82,79,80,1,0,0,0,0,64,0,-1--1--1,,1|(795,66)|
+1,83,81,80,1,0,0,0,0,64,0,-1--1--1,,1|(825,113)|
+1,84,80,63,1,0,0,0,0,64,0,-1--1--1,,1|(985,108)|
+10,85,Presión por reportes,878,332,37,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,86,85,4,1,0,0,0,0,64,0,-1--1--1,,1|(946,416)|
+10,87,Población con acceso a internet,985,1062,58,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,88,87,16,1,0,0,0,0,64,0,-1--1--1,,1|(860,1055)|
+10,89,Período de desfasamiento,1020,862,45,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,90,89,29,1,0,0,0,0,64,0,-1--1--1,,1|(943,868)|
+10,91,Población,1807,387,41,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128,0,0,0,0,0,0
+1,92,91,70,1,0,0,0,0,64,0,-1--1--1,,1|(1778,311)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Fact Checking
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,90,0
+12,1,0,545,83,90,19,0,7,0,8,-1,0,0,0,-1--1--1,0-0-0,|24||0-0-0,0,0,0,0,0,0
+Fact checking
+10,2,Difusión de Noticias Verdaderas,567,310,69,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+10,3,Difusión de publicaciones de Fact Checking,751,208,69,28,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,4,2,3,1,0,0,0,0,64,0,-1--1--1,,1|(621,243)|
+10,5,Publicaciones de Fact Checking,821,440,81,26,3,131,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+12,6,48,571,441,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,7,9,5,4,0,0,22,0,0,0,-1--1--1,,1|(700,441)|
+1,8,9,6,100,0,0,22,0,0,0,-1--1--1,,1|(614,441)|
+11,9,48,654,441,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,10,Nuevas publicaciones de Fact Checking,654,468,69,19,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+12,11,48,1094,439,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,12,14,11,4,0,0,22,0,0,0,-1--1--1,,1|(1041,441)|
+1,13,14,5,100,0,0,22,0,0,0,-1--1--1,,1|(944,441)|
+11,14,48,993,441,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,15,Publicaciones de Fact Checking olvidadas,993,468,70,19,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,16,Publicaciones por fuente,546,553,57,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,17,Fuentes de Fact Checking,772,554,52,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,18,16,10,1,0,0,0,0,64,0,-1--1--1,,1|(571,509)|
+1,19,17,10,1,0,0,0,0,64,0,-1--1--1,,1|(755,494)|
+1,20,5,15,1,0,0,0,0,64,0,-1--1--1,,1|(903,513)|
+10,21,Período de olvido de una publicación de Fact Checking,1180,545,80,28,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,22,21,15,1,0,0,0,0,64,0,-1--1--1,,1|(1043,529)|
+10,23,Visualizaciones de publicaciones de Fact Checking,1008,336,69,28,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,24,5,23,1,0,0,0,0,64,0,-1--1--1,,1|(844,344)|
+10,25,Visualizaciones por publicación de Fact Checking,1034,200,62,28,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,26,3,25,1,0,0,0,0,64,0,-1--1--1,,1|(900,239)|
+10,27,Alcance de publicación de Fact Checking,1291,266,74,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,28,27,25,1,0,0,0,0,64,0,-1--1--1,,1|(1142,288)|
+1,29,25,23,1,0,0,0,0,64,0,-1--1--1,,1|(999,255)|
+10,30,Time,468,382,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,31,30,10,1,0,0,0,0,64,0,-1--1--1,,1|(581,393)|
+10,32,Fact Checkers por Fuente,536,697,74,27,3,131,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+12,33,48,285,697,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,34,36,32,4,0,0,22,0,0,0,-1--1--1,,1|(419,698)|
+1,35,36,33,100,0,0,22,0,0,0,-1--1--1,,1|(329,698)|
+11,36,48,370,698,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,37,Nuevos fact checkers por fuente,370,725,63,19,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+12,38,48,797,698,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,39,41,38,4,0,0,22,0,0,0,-1--1--1,,1|(745,698)|
+1,40,41,32,100,0,0,22,0,0,0,-1--1--1,,1|(651,698)|
+11,41,48,698,698,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,42,Fact checkers despedidos,698,725,45,19,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,43,32,16,1,0,0,0,0,64,0,-1--1--1,,1|(526,624)|
+10,44,Publicaciones por fact checker,365,498,57,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,45,44,16,1,0,0,0,0,64,0,-1--1--1,,1|(445,450)|
+1,46,32,37,1,0,0,0,0,64,0,-1--1--1,,1|(467,774)|
+10,47,Tasa de contratación de Fact Checkers,231,627,67,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,48,47,37,1,0,0,0,0,64,0,-1--1--1,,1|(333,642)|
+1,49,32,42,1,0,0,0,0,64,0,-1--1--1,,1|(590,775)|
+10,50,Tasa de despido de Fact Checkers,847,623,63,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,51,50,42,1,0,0,0,0,64,0,-1--1--1,,1|(737,652)|
+10,52,Nuevos rumores,270,310,31,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,53,52,44,1,0,0,0,0,64,0,-1--1--1,,1|(257,401)|
+1,54,32,44,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(389,602)|
+10,55,Límite de publicaciones por fact checker,116,470,74,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,56,55,47,1,0,0,0,0,64,0,-1--1--1,,1|(129,538)|
+1,57,44,47,1,0,0,0,0,64,0,-1--1--1,,1|(252,542)|
+10,58,Visualizaciones olvidadas por publicaciones de Fact Checking,1271,424,82,28,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,59,23,58,1,0,0,0,0,64,0,-1--1--1,,1|(1110,409)|
+10,60,Nuevas visualizaciones de Fake News,1562,389,74,28,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,61,60,58,1,0,0,0,0,64,0,-1--1--1,,1|(1433,421)|
+10,62,Publicaciones por rumor,372,374,47,19,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,63,62,44,1,0,0,0,0,64,0,-1--1--1,,1|(355,421)|
+10,64,Período de contratación,223,777,40,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|0||0-0-0,0,0,0,0,0,0
+1,65,64,37,1,0,0,0,0,64,0,-1--1--1,,1|(333,789)|
+10,66,Población con acceso a internet,1095,91,58,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128,0,0,0,0,0,0
+1,67,66,25,1,0,0,0,0,64,0,-1--1--1,,1|(1051,125)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Trabajo
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,90,0
+10,1,Carga global de trabajo de hombres,429,331,62,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,2,Carga global de trabajo de mujeres,430,438,60,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,3,Carga global total de trabajo de mujeres,663,438,67,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,4,Carga global total de trabajo de hombres,659,332,67,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,5,1,4,1,0,0,0,0,64,0,-1--1--1,,1|(542,371)|
+1,6,2,3,1,0,0,0,0,64,0,-1--1--1,,1|(548,400)|
+10,7,Carga global total,843,374,56,11,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,8,4,7,1,0,0,0,0,64,0,-1--1--1,,1|(791,317)|
+1,9,3,7,1,0,0,0,0,64,0,-1--1--1,,1|(799,437)|
+10,10,Porcentaje de tiempo libre,1053,372,45,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+12,11,0,174,114,52,19,0,7,0,8,-1,0,0,0,-1--1--1,0-0-0,|24||0-0-0,0,0,0,0,0,0
+Trabajo
+10,12,Porcentaje de hombres,521,194,45,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,13,Porcentaje de mujeres,521,580,45,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,14,Horas semanales,1069,489,53,11,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,15,Time,519,295,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,16,15,4,1,0,0,0,0,64,0,-1--1--1,,1|(550,325)|
+10,17,Time,537,497,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,18,17,3,1,0,0,0,0,64,0,-1--1--1,,1|(562,441)|
+1,19,14,10,1,0,0,0,0,64,0,-1--1--1,,1|(1087,433)|
+1,20,13,3,1,0,0,0,0,64,0,-1--1--1,,1|(646,524)|
+1,21,12,4,1,0,0,0,0,64,0,-1--1--1,,1|(634,226)|
+1,22,13,12,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(283,389)|
+1,23,15,12,1,0,0,0,0,64,0,-1--1--1,,1|(506,249)|
+1,24,7,10,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(943,331)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Reconocimiento de Fake News
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,90,0
+12,1,0,243,111,198,19,0,135,0,8,-1,0,0,0,-1--1--1,0-0-0,|24||0-0-0,0,0,0,0,0,0
+Reconocimiento de Fake News
+10,2,Habilidad de reconocimiento de Fake News de la población,331,403,91,28,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,3,Interacciones en Fake News,882,442,52,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,4,2,3,1,0,0,0,3,64,0,255-0-0,|12||0-0-0,1|(615,347)|
+10,5,Discusiones,872,599,40,20,3,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,6,Probabilidad de generar una discusión a causa de Fake News,599,449,90,28,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+10,7,Miedo a discusiones,607,751,36,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,8,Verificación de noticias,274,640,48,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,9,7,8,1,0,0,0,0,64,0,-1--1--1,,1|(428,732)|
+1,10,8,2,1,0,0,0,0,64,0,-1--1--1,,1|(214,535)|
+1,11,5,8,1,0,0,0,0,64,0,-1--1--1,,1|(610,519)|
+10,12,Interacciones por persona,804,288,60,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,13,12,3,1,0,0,0,0,64,0,-1--1--1,,1|(872,364)|
+12,14,48,1059,596,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,15,17,5,4,0,0,22,0,0,0,-1--1--1,,1|(950,597)|
+1,16,17,14,100,0,0,22,0,0,0,-1--1--1,,1|(1025,597)|
+11,17,48,995,597,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,18,Nuevas discusiones,995,624,36,19,40,3,0,4,-1,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,19,3,18,1,0,0,0,0,64,0,-1--1--1,,1|(947,525)|
+1,20,6,18,1,0,0,0,0,64,0,-1--1--1,,1|(852,498)|
+12,21,48,696,599,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,22,24,21,4,0,0,22,0,0,0,-1--1--1,,1|(740,599)|
+1,23,24,5,100,0,0,22,0,0,0,-1--1--1,,1|(809,599)|
+11,24,48,780,599,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,25,Discusiones resueltas,780,626,38,19,40,3,0,4,-1,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,26,5,25,1,0,0,0,0,64,0,-1--1--1,,1|(846,657)|
+10,27,Porcentajes de discusiones resueltas por año,602,632,79,28,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,28,27,25,1,0,0,0,0,64,0,-1--1--1,,1|(688,676)|
+10,29,Porcentaje de Publicaciones que son Fake News,1189,279,70,28,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,30,29,3,1,0,0,0,0,64,0,-1--1--1,,1|(1124,407)|
+10,31,Usuarios que generan Fake News,1021,136,69,27,3,131,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,32,31,29,1,0,0,0,0,64,0,-1--1--1,,1|(1038,221)|
+10,33,Reacción de censura,1351,133,40,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,34,29,33,1,0,0,0,0,64,0,-1--1--1,,1|(1333,226)|
+12,35,48,793,137,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,36,38,31,4,0,0,22,0,0,0,-1--1--1,,1|(913,137)|
+1,37,38,35,100,0,0,22,0,0,0,-1--1--1,,1|(832,137)|
+11,38,48,868,137,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,39,Nuevos usuarios que generan Fake News,868,164,67,19,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+12,40,48,1255,134,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,41,43,40,4,0,0,22,0,0,0,-1--1--1,,1|(1210,135)|
+1,42,43,31,100,0,0,22,0,0,0,-1--1--1,,1|(1126,135)|
+11,43,48,1169,135,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,44,Usuarios que generan Fake News eliminados,1169,162,73,19,40,3,0,4,-1,0,0,0,-1--1--1,255-255-128,|12||0-0-0,0,0,0,0,0,0
+1,45,31,39,1,0,0,0,0,64,0,-1--1--1,,1|(939,85)|
+1,46,31,44,1,0,0,0,2,64,0,-1--1--1,|12||0-0-0,1|(1101,84)|
+1,47,33,44,1,0,0,0,3,64,0,0-0-255,|12||0-0-0,1|(1269,76)|
+10,48,Población,1439,355,41,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,49,48,29,1,0,0,0,0,64,0,-1--1--1,,1|(1358,310)|
+10,50,Porcentaje de tiempo en redes sociales,983,316,73,19,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|0||128-128-128,0,0,0,0,0,0
+1,51,50,3,1,0,0,0,0,64,0,-1--1--1,,1|(957,393)|
+10,52,Período de reacción,1173,25,36,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|0||0-0-0,0,0,0,0,0,0
+1,53,52,44,1,0,0,0,0,64,0,-1--1--1,,1|(1176,77)|
+10,54,Tasa de nuevos usuarios que generan Fake News,753,63,78,19,8,3,0,4,0,0,0,0,-1--1--1,255-255-128,|0||0-0-0,0,0,0,0,0,0
+1,55,54,39,1,0,0,0,0,64,0,-1--1--1,,1|(832,101)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Población
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,90,0
+12,1,0,178,64,66,19,0,7,0,8,-1,0,0,0,-1--1--1,0-0-0,|24||0-0-0,0,0,0,0,0,0
+Población
+10,2,Población,524,279,46,76,3,131,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+12,3,48,897,320,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,4,6,3,4,0,0,22,0,0,0,-1--1--1,,1|(807,321)|
+1,5,6,2,100,0,0,22,0,0,0,-1--1--1,,1|(642,321)|
+11,6,48,721,321,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,7,Defunciones,721,340,39,11,40,3,0,4,-1,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+12,8,48,894,233,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,9,11,8,4,0,0,22,0,0,0,-1--1--1,,1|(802,234)|
+1,10,11,2,100,0,0,22,0,0,0,-1--1--1,,1|(639,234)|
+11,11,48,714,234,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,12,Emigrantes,714,253,35,11,40,3,0,4,-1,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+12,13,48,206,229,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,14,16,2,4,0,0,22,0,0,0,-1--1--1,,1|(410,229)|
+1,15,16,13,100,0,0,22,0,0,0,-1--1--1,,1|(273,229)|
+11,16,48,337,229,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,17,Inmigrantes,337,248,37,11,40,3,0,4,-1,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+12,18,48,203,335,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,19,21,2,4,0,0,22,0,0,0,-1--1--1,,1|(409,335)|
+1,20,21,18,100,0,0,22,0,0,0,-1--1--1,,1|(271,335)|
+11,21,48,335,335,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,22,Nacimientos,335,354,40,11,40,3,0,4,-1,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,23,Tasa de Inmigración,230,155,37,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,24,Tasa de Nacimientos,226,424,40,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,25,Tasa de Mortalidad,818,409,36,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+10,26,Tasa de Emigración,819,161,36,19,8,3,0,4,0,0,0,0,-1--1--1,192-255-192,|12||0-0-0,0,0,0,0,0,0
+1,27,2,12,1,0,0,0,0,64,0,-1--1--1,,1|(633,184)|
+1,28,26,12,1,0,0,0,0,64,0,-1--1--1,,1|(749,184)|
+1,29,2,7,1,0,0,0,0,64,0,-1--1--1,,1|(633,385)|
+1,30,25,7,1,0,0,0,0,64,0,-1--1--1,,1|(755,390)|
+1,31,24,22,1,0,0,0,0,64,0,-1--1--1,,1|(307,402)|
+1,32,2,22,1,0,0,0,0,64,0,-1--1--1,,1|(428,395)|
+1,33,23,17,1,0,0,0,0,64,0,-1--1--1,,1|(309,187)|
+1,34,2,17,1,0,0,0,0,64,0,-1--1--1,,1|(414,178)|
+10,35,Time,522,100,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,36,35,17,1,0,0,0,0,64,0,-1--1--1,,1|(395,144)|
+1,37,35,12,1,0,0,0,0,64,0,-1--1--1,,1|(648,132)|
+10,38,Time,530,481,26,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128,0,0,0,0,0,0
+1,39,38,22,1,0,0,0,0,64,0,-1--1--1,,1|(397,442)|
+1,40,38,7,1,0,0,0,0,64,0,-1--1--1,,1|(658,446)|
+///---\\\
+:L<%^E!@
+1:Baserun.vdfx
+9:Baserun
+23:0
+15:0,0,0,0,0,0
+19:80,0
+27:0,
+34:0,
+42:1
+72:0
+73:0
+4:Time
+5:Visualizaciones de Fake News
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:0
+41:0
+76:0
+77:0
+78:0
+79:0
+80:0
+81:0
+24:2005
+25:2100
+26:2100
+75:
+43:
